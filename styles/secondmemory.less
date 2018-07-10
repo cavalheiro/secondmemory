@@ -1,0 +1,153 @@
+@import "ui-variables";
+@import "syntax-variables";
+
+atom-panel {
+  .sm-panel-resize-handle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 10px;
+    cursor: col-resize;
+    z-index: 3;
+  }
+
+  //Styling for the sidebart
+  div.sm-panel {
+    -webkit-user-select: auto;
+    width: 400px;
+    min-width: 200px;
+
+    div.sm-panel-todo {
+      height: calc(50%);
+      overflow: scroll;
+
+      div.sm-panel-todo-header {
+        width: calc(100%);
+        position: absolute;
+        background-color: @pane-item-background-color;
+        height: 30px;
+
+        span.todo-title-icon {
+          position: relative;
+          float: left;
+          top: 5px;
+          margin-right: 8px;
+          margin-left: 8px;
+        }
+        span.todo-title {
+          top: 5px;
+          font-size: larger;
+          position: relative;
+          float: left;
+        }
+        span.refresh-button {
+          position: relative;
+          float: right;
+          top: 5px;
+        }
+        span.close-button {
+          position: relative;
+          float: right;
+          top: 5px;
+        }
+      }
+
+      div.sm-panel-todo-items {
+        height: calc(90%);
+        margin-top: 30px;
+
+        ul.sm-panel-todo-list {
+          margin-top: 8px;
+          padding-left: 12px;
+
+          list-style: none;
+          display:block;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+
+        li .icon::before {
+          margin-right: 0px;
+          margin-left: 0px;
+        }
+      }
+    }
+  }
+}
+
+
+atom-text-editor {
+  .syntax--secondmemory {
+
+    .syntax--headerline {
+
+      .syntax--h1.syntax--text {
+        font-weight: bold;
+        color: @text-color-warning;
+      }
+
+      .syntax--h2.syntax--text {
+        font-weight: bold;
+        color: @text-color-info;
+      }
+
+      .syntax--h3.syntax--text {
+        font-weight: bold;
+        color: @text-color-selected;
+      }
+
+      .syntax--h4.syntax--text {
+         font-weight: bold;
+      }
+
+      .syntax--h5.syntax--text {
+        color: @text-color-selected;
+      }
+
+      .syntax--h6.syntax--text {
+        color: @text-color-highlight;
+      }
+
+      .syntax--symbol {
+        color: @syntax-invisible-character-color;
+        font-size: 25%;
+      }
+    }
+
+    .syntax--nickname {
+      font-style: italic;
+      color: @text-color-highlight;
+    }
+
+    .syntax--tag {
+      color: @text-color-success;
+    }
+
+    .syntax--bullet.syntax--symbol {
+      color: @text-color-selected;
+    }
+
+    .syntax--bullet {
+
+      .syntax--task {
+        .syntax--label.syntax--priority1 {
+          color: @text-color-warning;
+        }
+        .syntax--label.syntax--priority2 {
+          color: @text-color-error;
+        }
+      }
+
+      .syntax--label.syntax--todo {
+        color: @text-color-selected;
+      }
+
+      .syntax--label.syntax--done {
+      }
+
+      .syntax--star {
+        color: @text-color-warning;
+      }
+    }
+  }
+}

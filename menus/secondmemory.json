@@ -1,0 +1,13 @@
+{
+  "menu": [
+    {
+      "label": "Second Memory",
+      "submenu": [
+         {
+           "label": "Toggle Sidebar",
+           "command": "sm:toggleSidebar"
+         }
+      ]
+    }
+  ]
+}
