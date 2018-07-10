@@ -1,0 +1,21 @@
+{
+  "name": "secondmemory",
+  "main": "lib/sm-main.js",
+  "version": "0.1.0",
+  "description": "",
+  "keywords": [
+    "markdown",
+    "org-mode",
+    "todo"
+  ],
+  "repository": "https://github.com/cavalheiro/secondmemory",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cavalheiro/secondmemoryissues"
+  },
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+  }
+}

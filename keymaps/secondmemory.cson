@@ -1,0 +1,22 @@
+'atom-text-editor[data-grammar="source secondmemory"]':
+  'tab': 'sm:indent',
+  'shift-tab': 'sm:unindent'
+  'enter': 'sm:newBulletLine'
+  'shift-enter': 'sm:newBulletSub'
+  # Insert something
+  'ctrl-i s': 'sm:scheduleItem'
+  'ctrl-i d': 'sm:insertDate'
+  'ctrl-i D': 'sm:insertTimelineDate'
+  'ctrl-i A': 'sm:insertTimelineDateWithActors'
+  # Cycle bullet status and priority
+  'ctrl-shift-t': 'sm:changeStatus'
+  'ctrl->': 'sm:changeUrgency'
+  'ctrl-space': 'sm:toggleCheckbox'
+  'ctrl-$': 'sm:changeValue'
+  'ctrl-{': 'sm:decreaseHeading'
+  'ctrl-}': 'sm:increaseHeading'
+  # Prefix star line
+  'alt-&': 'sm:insert-reminder'
+  'alt-*': 'sm:insert-star'
+  # Other
+  'ctrl-alt-\\': 'sm:toggleSidebar'
