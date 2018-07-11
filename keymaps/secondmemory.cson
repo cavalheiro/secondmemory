@@ -4,19 +4,15 @@
   'enter': 'sm:newBulletLine'
   'shift-enter': 'sm:newBulletSub'
   # Insert something
-  'ctrl-i s': 'sm:scheduleItem'
   'ctrl-i d': 'sm:insertDate'
   'ctrl-i D': 'sm:insertTimelineDate'
-  'ctrl-i A': 'sm:insertTimelineDateWithActors'
-  # Cycle bullet status and priority
-  'ctrl-shift-t': 'sm:changeStatus'
-  'ctrl->': 'sm:changeUrgency'
-  'ctrl-space': 'sm:toggleCheckbox'
-  'ctrl-$': 'sm:changeValue'
+  # Tasks and rotating labels
+  'ctrl-T': 'sm:toggleTask'
+  'ctrl->': 'sm:togglePriority'
+  'ctrl-X': 'sm:toggleCheckbox'
+  'ctrl-*': 'sm:toggleStar'
   'ctrl-{': 'sm:decreaseHeading'
   'ctrl-}': 'sm:increaseHeading'
-  # Prefix star line
-  'alt-&': 'sm:insert-reminder'
-  'alt-*': 'sm:insert-star'
-  # Other
-  'ctrl-alt-\\': 'sm:toggleSidebar'
+
+'atom-text-editor':
+  'ctrl-|': 'sm:toggleSidebar'
