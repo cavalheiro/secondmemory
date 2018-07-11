@@ -17,8 +17,8 @@ All text is written in **plain markdown** and you can structure your documents i
 | Keystroke   | Behaviour                                                           |
 | ------------| ------------------------------------------------------------------- |
 | ctrl-\|     |  Toggle sidebar visibility                                          |
-| tab         |  Indent selected lines                                              |
-| shift-tab   |  Outdent selected lines                                             |
+| tab         |  Small heading / Indent selected lines                              |
+| shift-tab   |  Bigger heading / Outdent selected lines                            |
 | enter       |  Create a new bullet line                                           |
 | shift-enter |  Create a new bullet line sub-item                                  |
 | ctrl-i d    |  Insert the current date in ISO-8601 format                         |
@@ -26,20 +26,20 @@ All text is written in **plain markdown** and you can structure your documents i
 | ctrl->      |  Toggle the priority of a task                                      |
 | ctrl-X      |  Add a checkbox to a bullet line                                    |
 | ctrl-*      |  Star the selected bullet line                                      |
-| ctrl-{      |  Line Heading - increase                                            |
-| ctrl-}      |  Line Heading - decrease                                            |
 
 ## Examples
 
 #### Headings
 
-You can cycle through heading levels. Press `ctrl-{` to increase heading level:
+When positioned in a heading, `tab` and `shift-tab` will decrease / increase heading size
+
+Press `tab` to decrease heading size:
 
 ```
     # Heading -> ## Heading -> ### Heading
 ```
 
-or `ctrl-}` to decrease heading level:
+or `shift-tab` to increase heading level:
 
 ```
     ### Heading -> ## Heading -> # Heading
