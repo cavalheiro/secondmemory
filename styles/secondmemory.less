@@ -2,75 +2,75 @@
 @import "syntax-variables";
 
 atom-panel {
-  .sm-panel-resize-handle {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 10px;
-    cursor: col-resize;
-    z-index: 3;
-  }
-
   //Styling for the sidebart
-  div.sm-panel {
-    -webkit-user-select: auto;
+  div.sm-panel-container {
+    // -webkit-user-select: auto;
     width: 400px;
-    min-width: 150px;
+    min-width: 200px;
+    // font-size: 1.2em;
 
-    div.sm-panel-todo {
-      height: calc(99%);
+    div.sm-panel-resize-handle {
+      float: left;
+      height: calc(100%);
+      width: 5px;
+      cursor: col-resize;
+    }
+
+    div.sm-panel {
+      height: calc(100%);
+      // float:right;
       overflow: scroll;
 
-      div.sm-panel-todo-header {
-        width: calc(100%);
-        position: absolute;
-        background-color: @pane-item-background-color;
-        height: 30px;
-
-        span.todo-title-icon {
-          position: relative;
-          float: left;
-          top: 5px;
-          margin-right: 8px;
-          margin-left: 8px;
-        }
-        span.todo-title {
-          top: 5px;
-          font-size: larger;
-          position: relative;
-          float: left;
-        }
-        span.refresh-button {
-          position: relative;
-          float: right;
-          top: 5px;
-        }
-        span.close-button {
-          position: relative;
-          float: right;
-          top: 5px;
-        }
+      span.refresh-button {
+        position: relative;
+        float: right;
+        right: -5px;
+        top: 7px;
       }
 
-      div.sm-panel-todo-items {
-        height: calc(90%);
-        margin-top: 30px;
-
-        ul.sm-panel-todo-list {
-          margin-top: 8px;
-          padding-left: 12px;
-
-          list-style: none;
-          display:block;
-          white-space: nowrap;
-          text-overflow: ellipsis;
-        }
-
-        li .icon::before {
-          margin-right: 0px;
-          margin-left: 0px;
-        }
+      ul {
+        border: 0px !important;
       }
+
+      span.todo-title-icon {
+        position: relative;
+        float: left;
+        top: 2px;
+        margin-right: 8px;
+        margin-left: 8px;
+      }
+
+      span.todo-title {
+        top: 0px;
+        font-size: larger;
+        position: relative;
+      }
+
+      ul.sm-panel-todo-list {
+        margin-top: 8px;
+        padding-left: 12px;
+
+        list-style: none;
+        display:block;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+
+      ul.sm-panel-stars-list {
+        margin-top: 8px;
+        padding-left: 12px;
+
+        list-style: none;
+        display:none;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+
+      li .icon::before {
+        margin-right: 0px;
+        margin-left: 0px;
+      }
+
     }
   }
 }

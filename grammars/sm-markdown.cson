@@ -101,10 +101,6 @@ repository:
       {
         name: 'star'
         match: "⭐"
-      },
-      {
-        name: 'reminder'
-        match: "📣"
       }
     ]
 
