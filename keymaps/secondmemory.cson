@@ -3,6 +3,7 @@
   'shift-tab': 'sm:unindent'
   'enter': 'sm:newBulletLine'
   'shift-enter': 'sm:newBulletSub'
+  'ctrl-h': 'sm:createHeading',
   # Insert something
   'ctrl-i d': 'sm:insertDate'
   'ctrl-i D': 'sm:insertTimelineDate'
