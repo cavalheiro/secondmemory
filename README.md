@@ -12,26 +12,38 @@ All text is written in **plain markdown** and you can structure your documents i
 
 ## Usage
 
-### Keymap
+| Keystroke         | Behaviour                                                          |
+|-------------------|--------------------------------------------------------------------|
+| ctrl-\|           | Toggle Sidebar visibility                                          |
+| ctrl-shift-h      | Create Heading                                                     |
+| ctrl-*            | Create List                                                        |
+| ctrl-i d          | Insert the current date in ISO-8601 format                         |
 
-| Keystroke   | Behaviour                                                           |
-| ------------| ------------------------------------------------------------------- |
-| ctrl-\|     |  Toggle sidebar visibility                                          |
-| tab         |  Small heading / Indent selected lines                              |
-| shift-tab   |  Bigger heading / Outdent selected lines                            |
-| enter       |  Create a new bullet line                                           |
-| shift-enter |  Create a new bullet line sub-item                                  |
-| ctrl-i d    |  Insert the current date in ISO-8601 format                         |
-| ctrl-T      |  Mark bullet line as a task. Tasks will be displayed on the sidebar |
-| ctrl->      |  Toggle the priority of a task                                      |
-| ctrl-X      |  Add a checkbox to a bullet line                                    |
-| ctrl-*      |  Star the selected bullet line                                      |
+When in a `Heading`
+
+| Keystroke         | Behaviour                                                          |
+|-------------------|--------------------------------------------------------------------|
+| tab               | Increase Heading                                                   |
+| shift-tab         | Decrease Heading                                                   |
+
+When in a `List`
+
+| Keystroke         | Behaviour                                                          |
+|-------------------|--------------------------------------------------------------------|
+| tab               | Indent selected items                                              |
+| shift-tab         | Outdent selected items                                             |
+| enter             | Create new item                                                    |
+| shift-enter       | Create new sub-item                                                |
+| ctrl-shift-t      | Create a Task from the list item                                   |
+| ctrl->            | Toggle the Priority of a Task                                      |
+| ctrl-shift-x      | Add a Checkbox to a list item                                      |
+| ctrl-*            | Add a Star to a list item                                          |
 
 ## Examples
 
-#### Headings
+### Headings
 
-When positioned in a heading, `tab` and `shift-tab` will decrease / increase heading size
+When selection is a heading, `tab` and `shift-tab` will decrease / increase heading size
 
 Press `tab` to decrease heading size:
 
@@ -45,46 +57,44 @@ or `shift-tab` to increase heading level:
     ### Heading -> ## Heading -> # Heading
 ```
 
-#### Bullets
+### Lists
 
-Bullets are lines that start with a `*` or a `-`.
-Blocks of bullets must follow a correct identation, as per markdown standards. Example:
+Lists are lines that start with a `*` or a `-`, and list items must follow a correct identation, as per markdown standard.
 
 ```
-  * Bullet 1
+  * Item 1
     - sub-item 1
     - sub-item 2
       - yet another sub-item
-  * Bullet 2
+  * Item 2
     - sub-item 1
     - sub-item 2
 ```
 
 #### Tasks
 
-Bullets can be transformed in tasks. Pending tasks will be displayed in the sidebar.
-To create a task, move the cursor to a bullet line and press ctrl-T:
+
+To create a Task, select a List item and press `ctrl-shift-t`
 
 ```
     * [TODO] My first task
 ```
 
-To change the priority of a task, move the cursor to the task line, and press `ctrl->`:
+To change the Priority of a Task, press `ctrl->`
 
 ```
     * [TODO] [>] My first task
     * [TODO] [>>] My first task
 ```
 
-You can also create task sub-items with checkboxes:
+You can also create checkboxes in Task sub-items, by pressing `ctrl-shift-x` while positioned in a sub-item
 
 ```
     * [TODO] Test task 01
       - [ ] item 1
       - [x] item 2
 ```
-
-Please note there is currently no automation in place. Tasks will not be automatically closed when all boxes are checked.
+*Pending Tasks (TODO items) will be displayed in the sidebar.*
 
 ## Motivation
 
