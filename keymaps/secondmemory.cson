@@ -8,9 +8,9 @@
   'ctrl-i d': 'sm:insertDate'
   'ctrl-i D': 'sm:insertTimelineDate'
   # Tasks and rotating labels
-  'ctrl-T': 'sm:toggleTask'
+  'ctrl-shift-t': 'sm:toggleTask'
   'ctrl->': 'sm:togglePriority'
-  'ctrl-X': 'sm:toggleCheckbox'
+  'ctrl-shift-x': 'sm:toggleCheckbox'
   'ctrl-*': 'sm:toggleStar'
 
 'atom-text-editor':
