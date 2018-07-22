@@ -101,6 +101,21 @@ repository:
       {
         name: 'star'
         match: "⭐"
+      },
+      {
+        match: '\\[(={1,2})\\s*\\]'
+        captures:
+          1: name: 'labelred'
+      },
+      {
+        match: '\\[(={3})\\s*\\]'
+        captures:
+          1: name: 'labelamber'
+      },
+      {
+        match: '\\[(={4,5})\\s*\\]'
+        captures:
+          1: name: 'labelgreen'
       }
     ]
 
