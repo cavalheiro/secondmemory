@@ -12,6 +12,7 @@
   'ctrl->': 'sm:togglePriority'
   'ctrl-shift-x': 'sm:toggleCheckbox'
   'ctrl-*': 'sm:toggleStar'
+  'ctrl-&': 'sm:toggleProgress'
 
 'atom-text-editor':
   'ctrl-|': 'sm:toggleSidebar'

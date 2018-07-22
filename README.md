@@ -3,6 +3,8 @@
 Second memory is a way to keep loose notes, journals and TODO lists inside of Atom editor.
 All text is written in **plain markdown** and you can structure your documents in whatever way you want.
 
+![SM Screenshot](https://github.com/cavalheiro/secondmemory/raw/master/screenshots/sm-0.1.0.png)
+
 **Base features include**
 
   - Markdown grammar with syntax highlighting
