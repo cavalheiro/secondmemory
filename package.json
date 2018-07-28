@@ -1,7 +1,7 @@
 {
   "name": "secondmemory",
   "main": "lib/sm-main.js",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Second memory is a way to keep notes, journals and TODO lists in markdown format",
   "keywords": [
     "markdown",
