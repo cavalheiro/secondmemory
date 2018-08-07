@@ -1,13 +1,13 @@
 'atom-text-editor[data-grammar="source secondmemory"]':
+  'ctrl-h': 'sm:toggleHeading',
   'tab': 'sm:indent',
-  'shift-tab': 'sm:unindent'
-  'enter': 'sm:newBulletLine'
-  'shift-enter': 'sm:newBulletSub'
-  'ctrl-h': 'sm:createHeading',
+  'shift-tab': 'sm:outdent'
+  'enter': 'sm:newLine'
   # Insert something
   'ctrl-i d': 'sm:insertDate'
   'ctrl-i D': 'sm:insertTimelineDate'
   # Tasks and rotating labels
+  'ctrl-space': 'sm:toggleList'
   'ctrl-shift-t': 'sm:toggleTask'
   'ctrl->': 'sm:togglePriority'
   'ctrl-shift-x': 'sm:toggleCheckbox'

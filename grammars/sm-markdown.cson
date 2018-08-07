@@ -19,6 +19,7 @@ repository:
         { include: "#keywords" }
         { include: "#bullets" }
         { include: "#headingBlock" }
+        { include: "#plaintext" }
     ]
   headingBlock:
     patterns: [
@@ -28,13 +29,13 @@ repository:
         match: '^(#{1,6})\\s(.*)$'
         captures:
           0:
-            name: "headerline"
+            name: "heading"
             patterns: [
               { include: "#textheadings" }
             ]
         # beginCaptures:
         #   0:
-        #     name: "headerline"
+        #     name: "heading"
         #     patterns: [
         #       { include: "#textheadings" }
         #     ]
@@ -139,7 +140,7 @@ repository:
 
         }
       }
-    ],
+    ]
 
   bulletcontents:
     patterns:[
@@ -198,3 +199,16 @@ repository:
         match: '\\[[xX\\s]\\]'
       }
     ]
+
+  plaintext:
+    patterns: [
+      {
+        match: '^(\\s*)(.*)$'
+        captures: {
+          1:
+              name: 'whitespace'
+          2:
+              name: 'text'
+        }
+      }
+    ],
