@@ -18,7 +18,6 @@ All text is written in **plain markdown** and you can structure your documents i
 |-------------------|--------------------------------------------------------------------|
 | ctrl-\|           | Toggle Sidebar visibility                                          |
 | ctrl-shift-h      | Create Heading                                                     |
-| ctrl-*            | Create List                                                        |
 | ctrl-i d          | Insert the current date in ISO-8601 format                         |
 
 When in a `Heading`
@@ -35,7 +34,6 @@ When in a `List`
 | tab               | Indent selected items                                              |
 | shift-tab         | Outdent selected items                                             |
 | enter             | Create new item                                                    |
-| shift-enter       | Create new sub-item                                                |
 | ctrl-shift-t      | Create a Task from the list item                                   |
 | ctrl->            | Toggle the Priority of a Task                                      |
 | ctrl-shift-x      | Add a Checkbox to a list item                                      |
