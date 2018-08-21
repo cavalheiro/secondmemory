@@ -113,23 +113,14 @@ atom-text-editor {
       }
     }
 
-    .syntax--nickname {
+    .syntax--keyword.syntax--nickname {
       font-style: italic;
-      color: @text-color-highlight;
+      color: @text-color;
     }
 
-    .syntax--tag {
-      color: @text-color-success;
-    }
-
-    .syntax--labelgreen {
-      color: @text-color-success;
-    }
-    .syntax--labelamber {
-      color: @text-color-warning;
-    }
-    .syntax--labelred {
-      color: @text-color-error;
+    .syntax--keyword.syntax--tag {
+      font-style: italic;
+      color: @text-color;
     }
 
     .syntax--bullet.syntax--symbol {
@@ -138,13 +129,14 @@ atom-text-editor {
 
     .syntax--bullet {
 
-      .syntax--task {
-        .syntax--label.syntax--priority1 {
-          color: @text-color-warning;
-        }
-        .syntax--label.syntax--priority2 {
-          color: @text-color-error;
-        }
+      .syntax--label.syntax--green {
+        color: @text-color-success;
+      }
+      .syntax--label.syntax--amber {
+        color: @text-color-warning;
+      }
+      .syntax--label.syntax--red {
+        color: @text-color-error;
       }
 
       .syntax--label.syntax--todo {
@@ -154,7 +146,7 @@ atom-text-editor {
       .syntax--label.syntax--done {
       }
 
-      .syntax--star {
+      .syntax--label.syntax--star {
         color: @text-color-warning;
       }
     }

@@ -1,7 +1,6 @@
 scopeName: 'source.secondmemory'
 name: 'SM - Markdown'
 fileTypes: [
-  'org'
   'md'
 ]
 
@@ -15,13 +14,11 @@ repository:
     begin: '^'
     end: '$'
     patterns: [
-        { include: "#headers" }
-        { include: "#keywords" }
+        { include: "#headings" }
         { include: "#bullets" }
-        { include: "#headingBlock" }
         { include: "#plaintext" }
     ]
-  headingBlock:
+  headings:
     patterns: [
       {
         # name: 'block-$1'
@@ -92,31 +89,36 @@ repository:
   keywords:
     patterns: [
       {
-        name: 'tag'
+        name: 'keyword.tag'
         match: "#([\\w|-]+){1,}"
       },
       {
-        name: 'nickname'
+        name: 'keyword.nickname'
         match: '@([\\w]+){1,}'
-      },
+      }
+    ]
+
+  labels:
+    patterns: [
       {
-        name: 'star'
+        name: 'label.star'
         match: "⭐"
       },
       {
-        match: '\\[(={1,2})\\s*\\]'
-        captures:
-          1: name: 'labelred'
+        name: 'label.todo'
+        match: '\\[TODO\\]'
       },
       {
-        match: '\\[(={3})\\s*\\]'
-        captures:
-          1: name: 'labelamber'
+        name: 'label.amber'
+        match: '\\[AMBER\\]'
       },
       {
-        match: '\\[(={4,5})\\s*\\]'
-        captures:
-          1: name: 'labelgreen'
+        name: 'label.red'
+        match: '\\[RED\\]'
+      },
+      {
+        name: 'label.checkbox'
+        match: '\\[[xX\\s]\\]'
       }
     ]
 
@@ -127,13 +129,12 @@ repository:
       {
         match: '^(\\s*)(([-*])\\s+(.*))$'
         captures: {
-          1:
-              name: 'bullet.whitespace'
           2:
               name: 'bullet'
           3:
               name: 'bullet.symbol'
           4:
+              name: 'bullet.contents'
               patterns: [
                 { include: "#bulletcontents" }
               ]
@@ -145,14 +146,14 @@ repository:
   bulletcontents:
     patterns:[
       {
-        name: "task"
-        match: "^(\\[TODO\\]\\s(\\[.*\\]\\s*)*)\\s*(.*)"
+        name: 'task'
+        match: "^((\\[TODO\\])\\s*(((⭐|\\[\\w+\\])\\s*)*))\\s*(.*)"
         captures: {
           1:
               patterns: [
-                { include: "#tasklabels" }
+                { include: "#labels" }
               ]
-          3:
+          6:
               name: 'text'
               patterns: [
                 { include: "#keywords" }
@@ -160,43 +161,22 @@ repository:
           }
       },
       {
-        name: "item"
-        match: "^(\\[.*\\]\\s*)*\\s*(.*)"
+        match: "^\\[DONE\\]\\s(.*)"
         captures: {
           1:
-              patterns: [
-                { include: "#nontasklabels" }
-              ]
-          2:
+              name: 'text'
+          }
+      },
+      {
+        match: "^(.*)"
+        captures: {
+          1:
               name: 'text'
               patterns: [
+                { include: "#labels" }
                 { include: "#keywords" }
               ]
           }
-      }
-    ]
-
-  tasklabels:
-    patterns:[
-      {
-        name: 'label.todo'
-        match: '\\[TODO\\]'
-      },
-      {
-        name: 'label.priority1'
-        match: '\\[>\\]'
-      },
-      {
-        name: 'label.priority2'
-        match: '\\[>>\\]'
-      }
-    ]
-
-  nontasklabels:
-    patterns:[
-      {
-        name: 'label.checkbox'
-        match: '\\[[xX\\s]\\]'
       }
     ]
 
