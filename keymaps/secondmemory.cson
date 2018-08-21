@@ -5,14 +5,10 @@
   'enter': 'sm:newLine'
   # Insert something
   'ctrl-i d': 'sm:insertDate'
-  'ctrl-i D': 'sm:insertTimelineDate'
-  # Tasks and rotating labels
-  'ctrl-space': 'sm:toggleList'
   'ctrl-shift-t': 'sm:toggleTask'
-  'ctrl->': 'sm:togglePriority'
-  'ctrl-shift-x': 'sm:toggleCheckbox'
+  'ctrl->': 'sm:toggleStatus'
+  'ctrl-space': 'sm:toggleCheckbox'
   'ctrl-*': 'sm:toggleStar'
-  'ctrl-&': 'sm:toggleProgress'
 
 'atom-text-editor':
   'ctrl-|': 'sm:toggleSidebar'
