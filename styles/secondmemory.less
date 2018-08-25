@@ -118,11 +118,6 @@ atom-text-editor {
       color: @text-color;
     }
 
-    .syntax--keyword.syntax--tag {
-      font-style: italic;
-      color: @text-color;
-    }
-
     .syntax--bullet.syntax--symbol {
       color: @text-color-selected;
     }
@@ -137,6 +132,11 @@ atom-text-editor {
       }
       .syntax--label.syntax--red {
         color: @text-color-error;
+      }
+
+      .syntax--label.syntax--tag {
+        font-style: italic;
+        color: @text-color;
       }
 
       .syntax--label.syntax--todo {
