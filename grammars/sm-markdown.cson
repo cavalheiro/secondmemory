@@ -89,10 +89,6 @@ repository:
   keywords:
     patterns: [
       {
-        name: 'keyword.tag'
-        match: "#([\\w|-]+){1,}"
-      },
-      {
         name: 'keyword.nickname'
         match: '@([\\w]+){1,}'
       }
@@ -109,17 +105,25 @@ repository:
         match: '\\[TODO\\]'
       },
       {
+        name: 'label.green'
+        match: '#green'
+      },
+      {
         name: 'label.amber'
-        match: '\\[AMBER\\]'
+        match: '#amber'
       },
       {
         name: 'label.red'
-        match: '\\[RED\\]'
+        match: '#red'
       },
       {
         name: 'label.checkbox'
         match: '\\[[xX\\s]\\]'
-      }
+      },
+      {
+        name: 'label.tag'
+        match: "#([\\w|-]+){1,}"
+      },
     ]
 
 # --------------------------------------
@@ -147,7 +151,7 @@ repository:
     patterns:[
       {
         name: 'task'
-        match: "^((\\[TODO\\])\\s*(((⭐|\\[\\w+\\])\\s*)*))\\s*(.*)"
+        match: "^((\\[TODO\\])\\s*(((⭐|\\[\\w+\\]|#\\w+)\\s*)*))\\s*(.*)"
         captures: {
           1:
               patterns: [
