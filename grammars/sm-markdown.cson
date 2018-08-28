@@ -190,9 +190,9 @@ repository:
         match: '^(\\s*)(.*)$'
         captures: {
           1:
-              name: 'whitespace'
+              name: 'leadingspace'
           2:
-              name: 'text'
+              name: 'justtext'
         }
       }
     ],

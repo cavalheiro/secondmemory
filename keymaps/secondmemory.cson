@@ -1,5 +1,4 @@
 'atom-text-editor[data-grammar="source secondmemory"]':
-  'ctrl-h': 'sm:toggleHeading',
   'tab': 'sm:indent',
   'shift-tab': 'sm:outdent'
   'enter': 'sm:newLine'
