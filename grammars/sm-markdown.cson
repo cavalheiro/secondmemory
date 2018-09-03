@@ -91,6 +91,10 @@ repository:
       {
         name: 'keyword.nickname'
         match: '@([\\w]+){1,}'
+      },
+      {
+        name: 'keyword.url'
+        match: 'https?:\\/\\/([\\w-]+\\.?)+(:\\d+)?(\\/[-\\.\\w]+)*(\\?[^\\s]+)?(#[-\\.\\w]+)?'
       }
     ]
 
@@ -193,6 +197,10 @@ repository:
               name: 'leadingspace'
           2:
               name: 'justtext'
+              patterns: [
+                { include: "#labels" }
+                { include: "#keywords" }
+              ]
         }
       }
     ],
