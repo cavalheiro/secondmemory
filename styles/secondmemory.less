@@ -99,11 +99,11 @@ atom-text-editor {
       }
 
       .syntax--h4.syntax--text {
-        font-weight: bold;
+        color: @text-color-selected;
       }
 
       .syntax--h5.syntax--text {
-        color: @text-color-selected;
+        // color: @text-color-selected;
       }
 
       .syntax--h6.syntax--text {
@@ -111,21 +111,27 @@ atom-text-editor {
 
       .syntax--symbol {
         color: @syntax-invisible-character-color;
-        font-size: 25%;
+        font-size: 75%;
       }
     }
 
     // Bullets
+    .syntax--bullet {
 
-    .syntax--bullet.syntax--symbol {
-      color: @text-color-selected;
+      .syntax--sublevel {
+        color: @text-color;
+      }
+
+      .syntax--symbol {
+        color: @text-color-selected;
+      }
     }
 
     // Keywords
 
     .syntax--keyword.syntax--nickname {
       font-style: italic;
-      color: @text-color;
+      color: inherit;
     }
 
     .syntax--keyword.syntax--email {
@@ -145,13 +151,17 @@ atom-text-editor {
     // Emphasis
 
     .syntax--emphasis.syntax--symbol {
-      font-size: 50%;
+      // color: @text-color-subtle;
+      color: @syntax-invisible-character-color;
+      font-size: 75%;
     }
     .syntax--emphasis.syntax--strikethrough {
       text-decoration: line-through;
+      color: @text-color;
     }
     .syntax--emphasis.syntax--bold {
       font-weight: bold;
+      color: @text-color;
     }
     .syntax--emphasis.syntax--italic {
       font-style: italic;
@@ -171,7 +181,7 @@ atom-text-editor {
 
     .syntax--label.syntax--tag {
       font-style: italic;
-      color: @text-color;
+      // color: @text-color;
     }
 
     .syntax--label.syntax--todo {
