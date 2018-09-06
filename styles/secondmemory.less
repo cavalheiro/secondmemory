@@ -2,7 +2,7 @@
 @import "syntax-variables";
 
 atom-panel {
-  //Styling for the sidebart
+  //Styling for the sidebar
   div.sm-panel-container {
     // -webkit-user-select: auto;
     width: 400px;
@@ -79,6 +79,8 @@ atom-panel {
 atom-text-editor {
   .syntax--secondmemory {
 
+    // Headings
+
     .syntax--heading {
 
       .syntax--h1.syntax--text {
@@ -113,6 +115,14 @@ atom-text-editor {
       }
     }
 
+    // Bullets
+
+    .syntax--bullet.syntax--symbol {
+      color: @text-color-selected;
+    }
+
+    // Keywords
+
     .syntax--keyword.syntax--nickname {
       font-style: italic;
       color: @text-color;
@@ -132,37 +142,48 @@ atom-text-editor {
       cursor: pointer;
     }
 
-    .syntax--bullet.syntax--symbol {
+    // Emphasis
+
+    .syntax--emphasis.syntax--symbol {
+      font-size: 50%;
+    }
+    .syntax--emphasis.syntax--strikethrough {
+      text-decoration: line-through;
+    }
+    .syntax--emphasis.syntax--bold {
+      font-weight: bold;
+    }
+    .syntax--emphasis.syntax--italic {
+      font-style: italic;
+    }
+
+    // Labels
+
+    .syntax--label.syntax--green {
+      color: @text-color-success;
+    }
+    .syntax--label.syntax--amber {
+      color: @text-color-warning;
+    }
+    .syntax--label.syntax--red {
+      color: @text-color-error;
+    }
+
+    .syntax--label.syntax--tag {
+      font-style: italic;
+      color: @text-color;
+    }
+
+    .syntax--label.syntax--todo {
       color: @text-color-selected;
     }
 
-    .syntax--bullet {
-
-      .syntax--label.syntax--green {
-        color: @text-color-success;
-      }
-      .syntax--label.syntax--amber {
-        color: @text-color-warning;
-      }
-      .syntax--label.syntax--red {
-        color: @text-color-error;
-      }
-
-      .syntax--label.syntax--tag {
-        font-style: italic;
-        color: @text-color;
-      }
-
-      .syntax--label.syntax--todo {
-        color: @text-color-selected;
-      }
-
-      .syntax--label.syntax--done {
-      }
-
-      .syntax--label.syntax--star {
-        color: @text-color-warning;
-      }
+    .syntax--label.syntax--done {
     }
+
+    .syntax--label.syntax--star {
+      color: @text-color-warning;
+    }
+
   }
 }
