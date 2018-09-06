@@ -182,18 +182,40 @@ repository:
   bullets:
     patterns: [
       {
-        match: '^(\\s*)(([-*])\\s+(.*))$'
+        match: '^(\\s*)([-*]\\s.*)$'
         captures: {
+          1:
+              name: 'leadingspace'
           2:
               name: 'bullet'
-          3:
-              name: 'bullet.symbol'
-          4:
-              name: 'bullet.contents'
-              patterns: [
-                { include: "#bulletcontents" }
+              patterns:[
+                {
+                  name: 'toplevel'
+                  match: '([*])\\s+(.*)'
+                  captures: {
+                    1:
+                        name: 'symbol'
+                    2:
+                        name: 'bullet.contents'
+                        patterns:[
+                          { include: "#bulletcontents" }
+                        ]
+                  }
+                },
+                {
+                  name: 'sublevel'
+                  match: '([-])\\s+(.*)'
+                  captures: {
+                    1:
+                        name: 'symbol'
+                    2:
+                        name: 'bullet.contents'
+                        patterns:[
+                          { include: "#bulletcontents" }
+                        ]
+                  }
+                }
               ]
-
         }
       }
     ]
