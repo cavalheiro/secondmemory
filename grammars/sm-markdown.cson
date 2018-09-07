@@ -182,7 +182,7 @@ repository:
   bullets:
     patterns: [
       {
-        match: '^(\\s*)([-*]\\s.*)$'
+        match: '^(\\s*)([-*][ ].*)$'
         captures: {
           1:
               name: 'leadingspace'
@@ -191,7 +191,7 @@ repository:
               patterns:[
                 {
                   name: 'toplevel'
-                  match: '([*])\\s+(.*)'
+                  match: '([*])[ ](.*)'
                   captures: {
                     1:
                         name: 'symbol'
@@ -204,7 +204,7 @@ repository:
                 },
                 {
                   name: 'sublevel'
-                  match: '([-])\\s+(.*)'
+                  match: '([-])[ ](.*)'
                   captures: {
                     1:
                         name: 'symbol'
