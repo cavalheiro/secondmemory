@@ -47,40 +47,46 @@ repository:
   textheadings:
     patterns: [
       {
-        match: '^(#\\s)(.*)$'
+        match: '^(#)[ ]((.*))$'
         captures:
           1: name: 'symbol'
           2: name: 'h1.text'
+          3: name: 'text'
       },
       {
-        match: '^(#{2}\\s)(.*)$'
+        match: '^(#{2})[ ]((.*))$'
         captures:
           1: name: 'symbol'
           2: name: 'h2.text'
+          3: name: 'text'
       },
       {
-        match: '^(#{3}\\s)(.*)$'
+        match: '^(#{3})[ ]((.*))$'
         captures:
           1: name: 'symbol'
           2: name: 'h3.text'
+          3: name: 'text'
       },
       {
-        match: '^(#{4}\\s)(.*)$'
+        match: '^(#{4})[ ]((.*))$'
         captures:
           1: name: 'symbol'
           2: name: 'h4.text'
+          3: name: 'text'
       },
       {
-        match: '^(#{5}\\s)(.*)$'
+        match: '^(#{5})[ ]((.*))$'
         captures:
           1: name: 'symbol'
           2: name: 'h5.text'
+          3: name: 'text'
       },
       {
-        match: '^(#{6}\\s)(.*)$'
+        match: '^(#{6})[ ]((.*))$'
         captures:
           1: name: 'symbol'
           2: name: 'h6.text'
+          3: name: 'text'
       }
     ]
 
@@ -266,7 +272,7 @@ repository:
           1:
               name: 'leadingspace'
           2:
-              name: 'justtext'
+              name: 'text'
               patterns: [
                 { include: "#emphasis" }
                 { include: "#labels" }

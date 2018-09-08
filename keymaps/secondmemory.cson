@@ -6,7 +6,7 @@
   'ctrl-i d': 'sm:insertDate'
   'ctrl-shift-t': 'sm:toggleTask'
   'ctrl->': 'sm:toggleStatus'
-  'ctrl-space': 'sm:toggleCheckbox'
+  'ctrl-space': 'sm:createList'
   'ctrl-*': 'sm:toggleStar'
 
 'atom-text-editor':
