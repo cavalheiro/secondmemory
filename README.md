@@ -17,7 +17,7 @@ All text is written in **plain markdown** and you can structure your documents i
 | Keystroke         | Behaviour                                                          |
 |-------------------|--------------------------------------------------------------------|
 | ctrl-\|           | Toggle Sidebar visibility                                          |
-| ctrl-shift-h      | Create Heading                                                     |
+| ctrl-tab          | Create List / Heading                                              |
 | ctrl-i d          | Insert the current date in ISO-8601 format                         |
 
 When in a `Heading`
@@ -36,8 +36,6 @@ When in a `List`
 | enter             | Create new item                                                    |
 | ctrl-shift-t      | Create a Task from the list item                                   |
 | ctrl->            | Toggle the Priority of a Task                                      |
-| ctrl-shift-x      | Add a Checkbox to a list item                                      |
-| ctrl-*            | Add a Star to a list item                                          |
 
 ## Examples
 
@@ -73,7 +71,6 @@ Lists are lines that start with a `*` or a `-`, and list items must follow a cor
 
 #### Tasks
 
-
 To create a Task, select a List item and press `ctrl-shift-t`
 
 ```
@@ -83,22 +80,14 @@ To create a Task, select a List item and press `ctrl-shift-t`
 To change the Priority of a Task, press `ctrl->`
 
 ```
-    * [TODO] [>] My first task
-    * [TODO] [>>] My first task
-```
-
-You can also create checkboxes in Task sub-items, by pressing `ctrl-shift-x` while positioned in a sub-item
-
-```
-    * [TODO] Test task 01
-      - [ ] item 1
-      - [x] item 2
+    * [TODO] #> My first task
+    * [TODO] #>> My first task
 ```
 *Pending Tasks (TODO items) will be displayed in the sidebar.*
 
 ## Motivation
 
-I write lots of notes, about almost everything. Writing is a very important part of my work and of my organization in general. After trying several note taking tools and not being happy with any of them, I figured I had to start building my own.
+I write lots of notes. Writing is a very important part of my work and of my organization in general.
 
 ## License
 
