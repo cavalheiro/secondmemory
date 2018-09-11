@@ -162,20 +162,16 @@ repository:
         match: '\\[TODO\\]'
       },
       {
-        name: 'label.green'
-        match: '#green'
+        name: 'label.red'
+        match: '#>>>'
       },
       {
         name: 'label.amber'
-        match: '#amber'
+        match: '#>>'
       },
       {
-        name: 'label.red'
-        match: '#red'
-      },
-      {
-        name: 'label.checkbox'
-        match: '\\[[xX\\s]\\]'
+        name: 'label.green'
+        match: '#>'
       },
       {
         name: 'label.tag'
@@ -230,7 +226,7 @@ repository:
     patterns:[
       {
         name: 'task'
-        match: "^((\\[TODO\\])\\s*(((⭐|\\[\\w+\\]|#\\w+)\\s*)*))\\s*(.*)"
+        match: "^((\\[TODO\\])[ ]*(((⭐|#[\\>\\w]+)[ ]*)*))[ ](.*)"
         captures: {
           1:
               patterns: [
