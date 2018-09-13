@@ -87,7 +87,7 @@ To change the Priority of a Task, press `ctrl->`
 
 ## Motivation
 
-I write lots of notes. Writing is a very important part of my work and of my organization in general.
+# I write lots of notes. Writing is a very important part of my work and of my organization in general.
 
 ## License
 

@@ -1,9 +1,10 @@
 'atom-text-editor[data-grammar="source secondmemory"]':
   'tab': 'sm:indent',
   'shift-tab': 'sm:outdent'
-  'ctrl-tab': 'sm:createList'
+  'ctrl-space': 'sm:createList'
   'enter': 'sm:newLine'
-  # Insert something
+
+  'ctrl-i s': 'sm:strikeout'
   'ctrl-i d': 'sm:insertDate'
   'ctrl-shift-t': 'sm:toggleTask'
   'ctrl->': 'sm:toggleStatus'

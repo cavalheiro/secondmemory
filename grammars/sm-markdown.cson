@@ -95,11 +95,11 @@ repository:
   emphasis:
     patterns: [
       {
-        name: 'emphasis.strikethrough'
-        match: '(~~).*(~~)'
+        match: '(~~)(.*)(~~)'
         captures: {
           1: name: 'emphasis.symbol'
-          2: name: 'emphasis.symbol'
+          2: name: 'emphasis.strikethrough'
+          3: name: 'emphasis.symbol'
         }
       },
       {
