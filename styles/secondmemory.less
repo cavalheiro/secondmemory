@@ -79,18 +79,19 @@ atom-panel {
 atom-text-editor {
   .syntax--secondmemory {
 
-    // Headings
+    color: @text-color;
 
+    // Headings
     .syntax--heading {
 
       .syntax--h1.syntax--text {
         font-weight: bold;
-        color: @text-color-warning;
+        color: @ui-site-color-2;
       }
 
       .syntax--h2.syntax--text {
         font-weight: bold;
-        color: @text-color-info;
+        color: @ui-site-color-2;
       }
 
       .syntax--h3.syntax--text {
@@ -103,7 +104,7 @@ atom-text-editor {
       }
 
       .syntax--h5.syntax--text {
-        // color: @text-color-selected;
+        color: @text-color-highlight;
       }
 
       .syntax--h6.syntax--text {
@@ -111,15 +112,20 @@ atom-text-editor {
 
       .syntax--symbol {
         color: @syntax-invisible-character-color;
-        font-size: 50%;
+        font-size: 75%;
       }
+    }
+
+    // Code block
+    .syntax--codeblock {
+      color: @text-color-warning;
     }
 
     // Bullets
     .syntax--bullet {
 
       .syntax--sublevel {
-        color: @text-color;
+        // color: @text-color;
       }
 
       .syntax--symbol {
@@ -130,17 +136,15 @@ atom-text-editor {
     // Keywords
 
     .syntax--keyword.syntax--nickname {
-      font-style: italic;
-      color: inherit;
+      color: @text-color-highlight;
     }
 
     .syntax--keyword.syntax--email {
-      font-style: italic;
       // color: @text-color;
     }
 
     .syntax--keyword.syntax--url {
-      // color: @text-color-selected;
+      // color: @text-color-subtle;
     }
 
     .syntax--keyword.syntax--active-link {
@@ -153,7 +157,7 @@ atom-text-editor {
     .syntax--emphasis.syntax--symbol {
       color: @text-color-subtle;
       // color: @syntax-invisible-character-color;
-      font-size: 70%;
+      font-size: 75%;
     }
     .syntax--emphasis.syntax--strikethrough {
       text-decoration: line-through;
