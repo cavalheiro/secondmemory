@@ -16,6 +16,7 @@ repository:
     patterns: [
         { include: "#headings" }
         { include: "#bullets" }
+        { include: "#codeblock" }
         { include: "#plaintext" }
     ]
   headings:
@@ -276,4 +277,19 @@ repository:
               ]
         }
       }
-    ],
+    ]
+
+  codeblock:
+    patterns: [
+      {
+        begin: '```'
+        end: '```'
+        patterns: [
+          match: '^(.*)$'
+          captures: {
+            1:
+              name: 'codeblock'
+          }
+        ]
+      }
+    ]
