@@ -11,4 +11,4 @@
   'ctrl-*': 'sm:toggleStar'
 
 'atom-text-editor':
-  'ctrl-|': 'sm:toggleSidebar'
+  'ctrl-s m': 'sm:toggleSidebar'
