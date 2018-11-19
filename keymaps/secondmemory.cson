@@ -4,11 +4,13 @@
   'ctrl-space': 'sm:createList'
   'enter': 'sm:newLine'
 
-  'ctrl-i s': 'sm:strikeout'
+  'alt-s': 'sm:strikeout'
+  'alt-b': 'sm:bold'
+  'alt-i': 'sm:italic'
   'ctrl-i d': 'sm:insertDate'
   'ctrl-shift-t': 'sm:toggleTask'
   'ctrl->': 'sm:toggleStatus'
   'ctrl-*': 'sm:toggleStar'
 
 'atom-text-editor':
-  'ctrl-s m': 'sm:toggleSidebar'
+  'ctrl-m': 'sm:toggleSidebar'
