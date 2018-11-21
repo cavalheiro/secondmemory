@@ -16,6 +16,7 @@ repository:
     patterns: [
         { include: "#headings" }
         { include: "#bullets" }
+        { include: "#quote" }
         { include: "#codeblock" }
         { include: "#plaintext" }
     ]
@@ -261,6 +262,17 @@ repository:
                 { include: "#keywords" }
               ]
           }
+      }
+    ]
+
+  quote:
+    patterns: [
+      {
+        match: '^\\s*>(.*)$'
+        captures: {
+          1:
+              name: 'quotedtext'
+        }
       }
     ]
 
