@@ -90,7 +90,7 @@ atom-text-editor {
       }
 
       .syntax--h2.syntax--text {
-        font-weight: bold;
+        // font-weight: bold;
         color: @ui-site-color-2;
       }
 
@@ -104,10 +104,11 @@ atom-text-editor {
       }
 
       .syntax--h5.syntax--text {
-        color: @text-color-highlight;
+        font-style: italic;
       }
 
       .syntax--h6.syntax--text {
+
       }
 
       .syntax--symbol {
@@ -121,6 +122,12 @@ atom-text-editor {
       color: @text-color-warning;
     }
 
+    // Code block
+    .syntax--quotedtext {
+      color: @text-color-subtle;
+      font-style: italic;
+    }
+
     // Bullets
     .syntax--bullet {
 
@@ -129,7 +136,7 @@ atom-text-editor {
       }
 
       .syntax--symbol {
-        color: @text-color-selected;
+        // color: @text-color-selected;
       }
     }
 
