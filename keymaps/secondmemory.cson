@@ -1,8 +1,9 @@
 'atom-text-editor[data-grammar="source secondmemory"]':
   'tab': 'sm:indent',
   'shift-tab': 'sm:outdent'
-  'ctrl-space': 'sm:createList'
   'enter': 'sm:newLine'
+  'ctrl-*': 'sm:createList'
+  'ctrl-#': 'sm:createHeading'
 
   'alt-s': 'sm:strikeout'
   'alt-b': 'sm:bold'
@@ -10,7 +11,6 @@
   'ctrl-i d': 'sm:insertDate'
   'ctrl-shift-t': 'sm:toggleTask'
   'ctrl->': 'sm:toggleStatus'
-  'ctrl-*': 'sm:toggleStar'
 
 'atom-text-editor':
   'ctrl-m': 'sm:toggleSidebar'
