@@ -95,12 +95,11 @@ atom-text-editor {
       }
 
       .syntax--h3.syntax--text {
-        font-weight: bold;
         color: @text-color-selected;
       }
 
       .syntax--h4.syntax--text {
-        color: @text-color-selected;
+        color: @text-color-highlight;
       }
 
       .syntax--h5.syntax--text {
@@ -163,19 +162,20 @@ atom-text-editor {
 
     .syntax--emphasis.syntax--symbol {
       color: @text-color-subtle;
-      // color: @syntax-invisible-character-color;
-      font-size: 75%;
+      // font-size: 75%;
     }
     .syntax--emphasis.syntax--strikethrough {
-      text-decoration: line-through;
-      color: @text-color;
+      .syntax--emphasis.syntax--text {
+        text-decoration: line-through;
+      }
     }
     .syntax--emphasis.syntax--bold {
       font-weight: bold;
-      color: @text-color;
     }
     .syntax--emphasis.syntax--italic {
-      font-style: italic;
+      .syntax--emphasis.syntax--text {
+        font-style: italic;
+      }
     }
 
     // Labels
