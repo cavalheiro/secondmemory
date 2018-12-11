@@ -107,19 +107,25 @@ repository:
       },
       {
         name: 'emphasis.italic'
-        match: '([*])([^*]+)([*])|(_)([^_]+)(_)'
+        match: '(?:^|\\s)(_)([^_](?:[^_]|\\s_\\s|\\w_\\w)*)(?<!\\s)(_)(?=\\s|_|$)'
         captures: {
           1: name: 'emphasis.symbol'
           2: name: 'emphasis.text'
           3: name: 'emphasis.symbol'
-          4: name: 'emphasis.symbol'
-          5: name: 'emphasis.text'
-          6: name: 'emphasis.symbol'
+        }
+      },
+      {
+        name: 'emphasis.italic'
+        match: '(?:^|\\s)(\\*)([^\\*](?:[^\\*]|\\s\\*\\s|\\w\\*\\w)*)(?<!\\s)(\\*)(?=\\s|\\*|$)'
+        captures: {
+          1: name: 'emphasis.symbol'
+          2: name: 'emphasis.text'
+          3: name: 'emphasis.symbol'
         }
       },
       {
         name: 'emphasis.bold'
-        match: '([*]{2})([^*]+)([*]{2})|(__)[^_]+(__)'
+        match: '(?:^|\\s)(?:([*]{2})([^ ]+)([*]{2})|(__)[^ ]+(__))(?:\\s|$)'
         captures: {
           1: name: 'emphasis.symbol'
           2:
