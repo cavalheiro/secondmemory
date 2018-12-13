@@ -121,11 +121,6 @@ atom-text-editor {
       color: @text-color-warning;
     }
 
-    // Code block
-    .syntax--quotedtext {
-      color: @text-color-subtle;
-      font-style: italic;
-    }
 
     // Bullets
     .syntax--bullet {
@@ -158,8 +153,18 @@ atom-text-editor {
       cursor: pointer;
     }
 
-    // Emphasis
+    // Quotes
+    .syntax--quote {
+       .syntax--symbol {
+         color: @text-color-highlight;
+       }
+      .syntax--text {
+        font-style: italic;
+        color: @text-color-subtle;
+      }
+     }
 
+    // Emphasis
     .syntax--emphasis.syntax--symbol {
       color: @text-color-subtle;
       // font-size: 75%;

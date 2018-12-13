@@ -274,10 +274,26 @@ repository:
   quote:
     patterns: [
       {
-        match: '^\\s*>(.*)$'
+        match: '^(\\s*)(>.*)$'
         captures: {
           1:
-              name: 'quotedtext'
+              name: 'leadingspace'
+          2:
+              name: 'quote'
+              patterns:[
+                {
+                  match: '(>)(.*)'
+                  captures: {
+                    1:
+                        name: 'symbol'
+                    2:
+                        name: 'text'
+                        patterns:[
+                          { include: "#keywords" }
+                        ]
+                  }
+                }
+              ]
         }
       }
     ]
