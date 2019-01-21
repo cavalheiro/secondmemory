@@ -2,6 +2,7 @@
   'tab': 'sm:indent',
   'shift-tab': 'sm:outdent'
   'enter': 'sm:newLine'
+  'shift-enter': 'sm:insertLineBefore'
   'ctrl-*': 'sm:createList'
   'ctrl-#': 'sm:createHeading'
 
