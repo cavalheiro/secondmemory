@@ -1,24 +1,13 @@
 # What Is Second Memory?
 
-Second memory is a way to keep loose notes, journals and TODO lists inside of Atom editor.
-All text is written in **plain markdown** and you can structure your documents in whatever way you want.
-
-![SM Screenshot](https://github.com/cavalheiro/secondmemory/raw/master/screenshots/sm-0.1.0.png)
-
-**Base features include**
-
-  - Markdown grammar with syntax highlighting
-  - TODO concept, with priorities
-  - Smart labels
-  - Sidebar, currently used only for tasks
+Second memory is a way to keep loose notes and journals inside of Atom editor, with markdown highlighting and some org-mode features.
 
 ## Usage
 
 | Keystroke         | Behaviour                                                          |
 |-------------------|--------------------------------------------------------------------|
-| ctrl-\|           | Toggle Sidebar visibility                                          |
-| ctrl-tab          | Create List / Heading                                              |
-| ctrl-i d          | Insert the current date in ISO-8601 format                         |
+| ctrl-#            | Create Heading                                                     |
+| ctrl-*            | Create List                                                        |
 
 When in a `Heading`
 
@@ -27,15 +16,14 @@ When in a `Heading`
 | tab               | Increase Heading                                                   |
 | shift-tab         | Decrease Heading                                                   |
 
-When in a `List`
+When inside a `List`
 
 | Keystroke         | Behaviour                                                          |
 |-------------------|--------------------------------------------------------------------|
-| tab               | Indent selected items                                              |
-| shift-tab         | Outdent selected items                                             |
+| tab               | Indent item                                                        |
+| shift-tab         | Outdent item                                                       |
 | enter             | Create new item                                                    |
-| ctrl-shift-t      | Create a Task from the list item                                   |
-| ctrl->            | Toggle the Priority of a Task                                      |
+| ctrl-shift-t      | Create / update Org checkbox                                       |
 
 ## Examples
 
@@ -68,27 +56,6 @@ Lists are lines that start with a `*` or a `-`, and list items must follow a cor
     - sub-item 1
     - sub-item 2
 ```
-
-#### Tasks
-
-To create a Task, select a List item and press `ctrl-shift-t`
-
-```
-    * [TODO] My first task
-```
-
-To change the Priority of a Task, press `ctrl->`
-
-```
-    * [TODO] #> My first task
-    * [TODO] #>> My first task
-```
-*Pending Tasks (TODO items) will be displayed in the sidebar.*
-
-## Motivation
-
-# I write lots of notes. Writing is a very important part of my work and of my organization in general.
-
 ## License
 
 This project has been released under the MIT license. Please see the LICENSE.md file for more details.
