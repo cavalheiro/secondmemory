@@ -187,7 +187,7 @@ repository:
       {
         name: 'label.tag'
         match: "#([\\w|-]+){1,}"
-      },
+      }
     ]
 
 # --------------------------------------
@@ -263,6 +263,7 @@ repository:
           1:
               name: 'text'
               patterns: [
+                { include: "#checkboxes" }
                 { include: "#emphasis" }
                 { include: "#labels" }
                 { include: "#keywords" }
@@ -311,6 +312,7 @@ repository:
                 { include: "#emphasis" }
                 { include: "#labels" }
                 { include: "#keywords" }
+                { include: "#checkboxes" }
               ]
         }
       }
@@ -329,4 +331,55 @@ repository:
           }
         ]
       }
+    ]
+
+  # Org checkboxes
+  checkboxes:
+    patterns: [
+      {
+        name: 'checkbox.todo'
+        match: "\\[ \\]"
+      },
+      {
+        name: 'checkbox.inprogress'
+        match: "\\[/\\]"
+      },
+      {
+        name: 'checkbox.blocked'
+        match: "\\[[oO]\\]"
+      },
+      {
+        name: 'checkbox.donebefore'
+        match: "(\\[[<]\\])\\s(.*)"
+        captures: {
+          1: name: 'symbol'
+          2: name: 'text'
+        }
+      },
+      {
+        name: 'checkbox.done'
+        match: "(\\[[xX]\\])\\s(.*)"
+        captures: {
+          1: name: 'symbol'
+          2: name: 'text'
+        }
+      },
+      {
+        name: 'checkbox.next'
+        match: "(\\[>\\])\\s(.*)(\\(.*\\))"
+        captures: {
+          1: name: 'symbol'
+          2: name: 'text'
+          3: name: 'date'
+        }
+      },
+
+      {
+        name: 'checkbox.canceled'
+        match: "(\\[-\\])\\s(.*)"
+        captures: {
+          1: name: 'symbol'
+          2: name: 'text'
+        }
+      },
     ]

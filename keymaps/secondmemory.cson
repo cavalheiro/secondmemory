@@ -9,9 +9,6 @@
   'alt-s': 'sm:strikeout'
   'alt-b': 'sm:bold'
   'alt-i': 'sm:italic'
-  'ctrl-i d': 'sm:insertDate'
-  'ctrl-shift-t': 'sm:toggleTask'
+  'ctrl-d': 'sm:insertDate'
+  'ctrl-shift-t': 'sm:toggleCheckbox'
   'ctrl->': 'sm:toggleStatus'
-
-'atom-text-editor':
-  'ctrl-m': 'sm:toggleSidebar'

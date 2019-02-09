@@ -164,6 +164,53 @@ atom-text-editor {
       }
      }
 
+    // Org checkboxes
+    .syntax--checkbox.syntax--todo {
+      color: @text-color-error;
+    }
+    .syntax--checkbox.syntax--inprogress {
+      color: @text-color-info;
+    }
+    .syntax--checkbox.syntax--blocked {
+      color: @text-color-warning;
+    }
+    .syntax--checkbox.syntax--done {
+      .syntax--symbol {
+        color: @text-color-success;
+      }
+      .syntax--text {
+        color: @text-color-subtle;
+      }
+    }
+    .syntax--checkbox.syntax--donebefore {
+      .syntax--symbol {
+        color: @text-color-subtle;
+      }
+      .syntax--text {
+        color: @text-color-subtle;
+      }
+    }
+    .syntax--checkbox.syntax--next {
+      .syntax--symbol {
+        color: @text-color-warning;
+      }
+      .syntax--text {
+        color: @text-color;
+      }
+      .syntax--date {
+        color: @text-color-warning;
+      }
+    }
+    .syntax--checkbox.syntax--canceled {
+      .syntax--symbol {
+        color: @text-color-success;
+      }
+      .syntax--text {
+        color: @text-color-subtle;
+        text-decoration: line-through;
+      }
+    }
+
     // Emphasis
     .syntax--emphasis.syntax--symbol {
       color: @text-color-subtle;
