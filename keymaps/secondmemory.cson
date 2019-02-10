@@ -6,9 +6,11 @@
   'ctrl-*': 'sm:createList'
   'ctrl-#': 'sm:createHeading'
 
+  'ctrl-shift-t': 'sm:toggleCheckbox'
+  'ctrl->': 'sm:toggleStatus'
+
+  'ctrl-i d': 'sm:insertDate'
+
   'alt-s': 'sm:strikeout'
   'alt-b': 'sm:bold'
   'alt-i': 'sm:italic'
-  'ctrl-d': 'sm:insertDate'
-  'ctrl-shift-t': 'sm:toggleCheckbox'
-  'ctrl->': 'sm:toggleStatus'

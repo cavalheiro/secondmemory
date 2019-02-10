@@ -1,7 +1,7 @@
 {
   "name": "secondmemory",
   "main": "lib/sm-main.js",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "Second memory is a way to keep notes and journals inside of Atom editor using markdown format",
   "keywords": [
     "markdown",
