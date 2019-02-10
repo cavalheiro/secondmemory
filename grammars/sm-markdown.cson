@@ -106,42 +106,21 @@ repository:
         }
       },
       {
-        name: 'emphasis.italic'
-        match: '(?:^|\\s)(_)([^_](?:[^_]|\\s_\\s|\\w_\\w)*)(?<!\\s)(_)(?=\\s|_|$)'
-        captures: {
-          1: name: 'emphasis.symbol'
-          2: name: 'emphasis.text'
-          3: name: 'emphasis.symbol'
-        }
-      },
-      {
-        name: 'emphasis.italic'
-        match: '(?:^|\\s)(\\*)([^\\*](?:[^\\*]|\\s\\*\\s|\\w\\*\\w)*)(?<!\\s)(\\*)(?=\\s|\\*|$)'
-        captures: {
-          1: name: 'emphasis.symbol'
-          2: name: 'emphasis.text'
-          3: name: 'emphasis.symbol'
-        }
-      },
-      {
         name: 'emphasis.bold'
-        match: '(?:^|\\s)(?:([*]{2})([^ ]+)([*]{2})|(__)[^ ]+(__))(?:\\s|$)'
+        match: '([*]{2})([^~]*)([*]{2})'
         captures: {
           1: name: 'emphasis.symbol'
-          2:
-            patterns: [
-              {
-                match: '(_)[^_]+(_)'
-                name: 'emphasis.italic'
-                captures: {
-                  1: name: 'emphasis.symbol'
-                  2: name: 'emphasis.symbol'
-                }
-              }
-            ]
+          2: name: 'emphasis.text'
           3: name: 'emphasis.symbol'
-          4: name: 'emphasis.symbol'
-          5: name: 'emphasis.symbol'
+        }
+      },
+      {
+        name: 'emphasis.italic'
+        match: '([_*])([^~]*)([_*])'
+        captures: {
+          1: name: 'emphasis.symbol'
+          2: name: 'emphasis.text'
+          3: name: 'emphasis.symbol'
         }
       }
     ]
@@ -350,35 +329,35 @@ repository:
       },
       {
         name: 'checkbox.donebefore'
-        match: "(\\[[<]\\])\\s(.*)"
+        match: "(\\[[<]\\])(.*)"
         captures: {
-          1: name: 'symbol'
+          1: name: 'box'
           2: name: 'text'
         }
       },
       {
         name: 'checkbox.done'
-        match: "(\\[[xX]\\])\\s(.*)"
+        match: "(\\[[xX]\\])(.*)"
         captures: {
-          1: name: 'symbol'
+          1: name: 'box'
           2: name: 'text'
         }
       },
       {
         name: 'checkbox.next'
-        match: "(\\[>\\])\\s(.*)(\\(.*\\))"
+        match: "(\\[>\\])([^\\(\\)]*)(\\(.*\\))?"
         captures: {
-          1: name: 'symbol'
+          1: name: 'box'
           2: name: 'text'
-          3: name: 'date'
+          3: name: 'nextdate'
         }
       },
 
       {
         name: 'checkbox.canceled'
-        match: "(\\[-\\])\\s(.*)"
+        match: "(\\[-\\])\\s?(.*)"
         captures: {
-          1: name: 'symbol'
+          1: name: 'box'
           2: name: 'text'
         }
       },
