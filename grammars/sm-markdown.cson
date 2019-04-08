@@ -138,6 +138,12 @@ repository:
       {
         name: 'keyword.url'
         match: 'https?:\\/\\/([\\w-]+\\.?)+(:\\d+)?(\\/[-\\.\\w@:]+)*(\\/)?(\\?[^\\s]+)?(#[-\\.\\w]+)?'
+      },
+      {
+        match: '\\[\\[(.*)\\]\\]'
+        captures: {
+          1: name: 'keyword.mdlink1'
+        }
       }
     ]
 
