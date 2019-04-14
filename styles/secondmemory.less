@@ -103,7 +103,7 @@ atom-text-editor {
       }
 
       .syntax--h5.syntax--text {
-        font-style: italic;
+        font-weight: bold;
       }
 
       .syntax--h6.syntax--text {
@@ -157,6 +157,11 @@ atom-text-editor {
       cursor: pointer;
     }
 
+    // Dates
+    .syntax--keyword.syntax--date {
+      color: @text-color-highlight;
+    }
+
     // Quotes
     .syntax--quote {
        .syntax--symbol {
@@ -164,7 +169,7 @@ atom-text-editor {
        }
       .syntax--text {
         font-style: italic;
-        color: @text-color-subtle;
+        // color: @text-color;
       }
      }
 

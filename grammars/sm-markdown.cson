@@ -144,7 +144,11 @@ repository:
         captures: {
           1: name: 'keyword.mdlink1'
         }
-      }
+      },
+      {
+        name: 'keyword.date'
+        match: "\\d{2}/\\d{2}/\\d{4}|\\d{2}-\\d{2}-\\d{4}"
+      },
     ]
 
   labels:
