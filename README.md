@@ -20,10 +20,10 @@ When inside a `List`
 
 | Keystroke         | Behaviour                                                          |
 |-------------------|--------------------------------------------------------------------|
-| tab               | Indent item                                                        |
-| shift-tab         | Outdent item                                                       |
-| enter             | Create new item                                                    |
-| ctrl-shift-t      | Create / update Org checkbox                                       |
+| tab               | Indent list item                                                   |
+| shift-tab         | Outdent list item                                                  |
+| enter             | Create new list item                                               |
+| ctrl-space        | Create / update Org checkbox                                       |
 
 ## Examples
 
@@ -55,6 +55,18 @@ Lists are lines that start with a `*` or a `-`, and list items must follow a cor
   - Item 2
     - sub-item 1
     - sub-item 2
+```
+
+### Org-mode checkboxes
+
+```
+  * [ ] To do
+  * [/] In progress
+  * [o] blocked
+  * [>] postponed (date)
+  * [x] done
+  * [-] canceled
+  * [<] done before
 ```
 
 ## License

@@ -1,13 +1,13 @@
 'atom-text-editor[data-grammar="source secondmemory"]':
+
+  'ctrl-1': 'sm:createHeading'
+  'ctrl-2': 'sm:createList'
+
   'tab': 'sm:indent',
   'shift-tab': 'sm:outdent'
   'enter': 'sm:newLine'
   'shift-enter': 'sm:insertLineBefore'
-  'ctrl-1': 'sm:createHeading'
-  'ctrl-2': 'sm:createList'
-
-  'ctrl-shift-t': 'sm:toggleCheckbox'
-  'ctrl->': 'sm:toggleStatus'
+  'ctrl-space': 'sm:toggleCheckbox'
 
   'ctrl-i d': 'sm:insertDate'
 
