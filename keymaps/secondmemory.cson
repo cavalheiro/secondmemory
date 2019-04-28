@@ -3,8 +3,8 @@
   'shift-tab': 'sm:outdent'
   'enter': 'sm:newLine'
   'shift-enter': 'sm:insertLineBefore'
-  'ctrl-*': 'sm:createList'
-  'ctrl-#': 'sm:createHeading'
+  'ctrl-1': 'sm:createHeading'
+  'ctrl-2': 'sm:createList'
 
   'ctrl-shift-t': 'sm:toggleCheckbox'
   'ctrl->': 'sm:toggleStatus'

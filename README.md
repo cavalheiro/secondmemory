@@ -6,8 +6,8 @@ Second memory is a way to keep loose notes and journals inside of Atom editor, w
 
 | Keystroke         | Behaviour                                                          |
 |-------------------|--------------------------------------------------------------------|
-| ctrl-#            | Create Heading                                                     |
-| ctrl-*            | Create List                                                        |
+| ctrl-1            | Create Heading                                                     |
+| ctrl-2            | Create List                                                        |
 
 When in a `Heading`
 
@@ -48,14 +48,15 @@ or `shift-tab` to increase heading level:
 Lists are lines that start with a `*` or a `-`, and list items must follow a correct identation, as per markdown standard.
 
 ```
-  * Item 1
+  - Item 1
     - sub-item 1
     - sub-item 2
       - yet another sub-item
-  * Item 2
+  - Item 2
     - sub-item 1
     - sub-item 2
 ```
+
 ## License
 
 This project has been released under the MIT license. Please see the LICENSE.md file for more details.
