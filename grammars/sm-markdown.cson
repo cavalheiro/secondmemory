@@ -20,11 +20,14 @@ repository:
         { include: "#codeblock" }
         { include: "#plaintext" }
     ]
+
+# ---------------
+#  Core elements
+# ---------------
+
   headings:
     patterns: [
       {
-        # name: 'block-$1'
-        # begin: '^(#{1,6})\\s(.*)(\\d{4}-\\d{2}-\\d{2})([^\\d].*)$'
         match: '^(#{1,6})\\s(.*)$'
         captures:
           0:
@@ -32,18 +35,6 @@ repository:
             patterns: [
               { include: "#textheadings" }
             ]
-        # beginCaptures:
-        #   0:
-        #     name: "heading"
-        #     patterns: [
-        #       { include: "#textheadings" }
-        #     ]
-        # end: '^(?=#+\\s)(?!\\1#+)'
-        # patterns: [
-        #   # { include: "$self" }
-        #   { include: "#bullets" }
-        #   { include: "#keywords" }
-        # ]
       }
     ]
   textheadings:
@@ -92,8 +83,81 @@ repository:
       }
     ]
 
-# --------------------------------------
+  # Bullets
+  bullets:
+    patterns: [
+      {
+        name: 'bullet'
+        match: '^(\\s*)([-*])([ ].*)$'
+        captures: {
+          1:
+              name: 'leadingspace'
+          2:
+              name: 'symbol'
+          3:
+              name: 'text'
+              patterns: [
+                { include: "#checkboxes" }
+                { include: "#emphasis" }
+                { include: "#keywords" }
+              ]
+        }
+      }
+    ]
 
+  # Quotes
+  quote:
+    patterns: [
+      {
+        name: 'quote'
+        match: '^(\\s*)(>)([ ].*)$'
+        captures: {
+          1:
+              name: 'leadingspace'
+          2:
+              name: 'symbol'
+          3:
+              name: 'text'
+        }
+      }
+    ]
+
+  # Plain text
+  plaintext:
+    patterns: [
+      {
+        match: '^(\\s*)(.*)$'
+        captures: {
+          1:
+              name: 'leadingspace'
+          2:
+              name: 'text'
+              patterns: [
+                { include: "#emphasis" }
+                { include: "#keywords" }
+                { include: "#checkboxes" }
+              ]
+        }
+      }
+    ]
+
+  # Code blocks
+  codeblock:
+    patterns: [
+      {
+        begin: '[ ]*```'
+        end: '```'
+        patterns: [
+          match: '^(.*)$'
+          captures: {
+            1:
+              name: 'codeblock'
+          }
+        ]
+      }
+    ]
+
+  #  Emphasis
   emphasis:
     patterns: [
       {
@@ -125,6 +189,11 @@ repository:
       }
     ]
 
+
+# -----------
+#  Keywords
+# -----------
+
   keywords:
     patterns: [
       {
@@ -137,7 +206,7 @@ repository:
       },
       {
         name: 'mdkeyword.url'
-        match: 'https?:\\/\\/([\\w-]+\\.?)+(:\\d+)?(\\/[-\\.\\w@:]+)*(\\/)?(\\?[^\\s]+)?(#[-\\.\\w]+)?'
+        match: 'https?:\\/\\/([\\w-]+\\.?)+(:\\d+)?(\\/[\\(\\)-\\.\\w@:]+)*(\\/)?(\\?[^\\s]+)?(#[-\\.\\w]+)?'
       },
       {
         match: '\\[\\[(.*)\\]\\]'
@@ -153,176 +222,16 @@ repository:
         name: 'mdkeyword.tag'
         match: "#([\\w|-]+){1,}"
       },
-    ]
-
-  labels:
-    patterns: [
       {
-        name: 'label.star'
+        name: 'mdkeyword.star'
         match: "⭐"
       },
-      {
-        name: 'label.todo'
-        match: '\\[TODO\\]'
-      },
-      {
-        name: 'label.red'
-        match: '#>>>'
-      },
-      {
-        name: 'label.amber'
-        match: '#>>'
-      },
-      {
-        name: 'label.green'
-        match: '#>'
-      },
     ]
 
-# --------------------------------------
+# ----------------
+#  Org checkboxes
+# ----------------
 
-  bullets:
-    patterns: [
-      {
-        match: '^(\\s*)([-*][ ].*)$'
-        captures: {
-          1:
-              name: 'leadingspace'
-          2:
-              name: 'bullet'
-              patterns:[
-                {
-                  name: 'toplevel'
-                  match: '([*])[ ](.*)'
-                  captures: {
-                    1:
-                        name: 'symbol'
-                    2:
-                        name: 'bullet.contents'
-                        patterns:[
-                          { include: "#bulletcontents" }
-                        ]
-                  }
-                },
-                {
-                  name: 'sublevel'
-                  match: '([-])[ ](.*)'
-                  captures: {
-                    1:
-                        name: 'symbol'
-                    2:
-                        name: 'bullet.contents'
-                        patterns:[
-                          { include: "#bulletcontents" }
-                        ]
-                  }
-                }
-              ]
-        }
-      }
-    ]
-
-  bulletcontents:
-    patterns:[
-      {
-        name: 'task'
-        match: "^((\\[TODO\\])[ ]*(((⭐|#[\\>\\w]+)[ ]*)*))[ ](.*)"
-        captures: {
-          1:
-              patterns: [
-                { include: "#labels" }
-              ]
-          6:
-              name: 'text'
-              patterns: [
-                { include: "#keywords" }
-              ]
-          }
-      },
-      {
-        match: "^\\[DONE\\]\\s(.*)"
-        captures: {
-          1:
-              name: 'text'
-          }
-      },
-      {
-        match: "^(.*)"
-        captures: {
-          1:
-              name: 'text'
-              patterns: [
-                { include: "#checkboxes" }
-                { include: "#emphasis" }
-                { include: "#labels" }
-                { include: "#keywords" }
-              ]
-          }
-      }
-    ]
-
-  quote:
-    patterns: [
-      {
-        match: '^(\\s*)(>.*)$'
-        captures: {
-          1:
-              name: 'leadingspace'
-          2:
-              name: 'quote'
-              patterns:[
-                {
-                  match: '(>)(.*)'
-                  captures: {
-                    1:
-                        name: 'symbol'
-                    2:
-                        name: 'text'
-                        patterns:[
-                          { include: "#keywords" }
-                        ]
-                  }
-                }
-              ]
-        }
-      }
-    ]
-
-  plaintext:
-    patterns: [
-      {
-        match: '^(\\s*)(.*)$'
-        captures: {
-          1:
-              name: 'leadingspace'
-          2:
-              name: 'text'
-              patterns: [
-                { include: "#emphasis" }
-                { include: "#labels" }
-                { include: "#keywords" }
-                { include: "#checkboxes" }
-              ]
-        }
-      }
-    ]
-
-  codeblock:
-    patterns: [
-      {
-        begin: '```'
-        end: '```'
-        patterns: [
-          match: '^(.*)$'
-          captures: {
-            1:
-              name: 'codeblock'
-          }
-        ]
-      }
-    ]
-
-  # Org checkboxes
   checkboxes:
     patterns: [
       {
@@ -362,7 +271,6 @@ repository:
           3: name: 'nextdate'
         }
       },
-
       {
         name: 'checkbox.canceled'
         match: "(\\[-\\])\\s?(.*)"
