@@ -79,27 +79,29 @@ atom-panel {
 atom-text-editor {
   .syntax--secondmemory {
 
-    color: @text-color;
+    color: @syntax-text-color;
 
     // Headings
     .syntax--heading {
 
       .syntax--h1.syntax--text {
         font-weight: bold;
-        color: @ui-site-color-2;
+        font-style: italic;
+        color: @syntax-color-method;
       }
 
       .syntax--h2.syntax--text {
-        // font-weight: bold;
-        color: @ui-site-color-2;
+        font-weight: bold;
+        color: @syntax-color-method;
       }
 
       .syntax--h3.syntax--text {
-        color: @text-color-selected;
+        color: @syntax-color-method;
       }
 
       .syntax--h4.syntax--text {
-        color: @text-color-highlight;
+        font-weight: bold;
+        font-style: italic;
       }
 
       .syntax--h5.syntax--text {
@@ -107,7 +109,7 @@ atom-text-editor {
       }
 
       .syntax--h6.syntax--text {
-
+        font-style: italic;
       }
 
       .syntax--symbol {
@@ -118,7 +120,7 @@ atom-text-editor {
 
     // Code block
     .syntax--codeblock {
-      color: @text-color-warning;
+      color: @syntax-color-snippet;
     }
 
 
@@ -136,30 +138,37 @@ atom-text-editor {
 
     // Keywords
 
-    .syntax--keyword.syntax--nickname {
-      color: @text-color-highlight;
+    .syntax--mdkeyword.syntax--nickname {
+      font-weight: bolder;
     }
 
-    .syntax--keyword.syntax--email {
+    .syntax--mdkeyword.syntax--email {
+      font-style: italic;
       // color: @text-color;
     }
 
-    .syntax--keyword.syntax--url {
+    .syntax--mdkeyword.syntax--url {
+      font-style: italic;
       // color: @text-color-subtle;
     }
 
-    .syntax--keyword.syntax--mdlink1 {
+    .syntax--mdkeyword.syntax--tag {
+      color: @syntax-color-tag;
+    }
+
+    .syntax--mdkeyword.syntax--mdlink1 {
       // color: @text-color-subtle;
     }
 
-    .syntax--keyword.syntax--active-link {
+    .syntax--mdkeyword.syntax--active-link {
+      font-style: italic;
       text-decoration: underline;
       cursor: pointer;
     }
 
     // Dates
-    .syntax--keyword.syntax--date {
-      color: @text-color-highlight;
+    .syntax--mdkeyword.syntax--date {
+      font-style: italic;
     }
 
     // Quotes
@@ -257,7 +266,7 @@ atom-text-editor {
     }
 
     .syntax--label.syntax--todo {
-      color: @text-color-selected;
+      font-style: italic;
     }
 
     .syntax--label.syntax--done {

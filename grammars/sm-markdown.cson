@@ -128,26 +128,30 @@ repository:
   keywords:
     patterns: [
       {
-        name: 'keyword.email'
+        name: 'mdkeyword.email'
         match: '(\\w+\\.?)+@(\\w+\\.?)+'
       },
       {
-        name: 'keyword.nickname'
+        name: 'mdkeyword.nickname'
         match: '@([\\w]+)'
       },
       {
-        name: 'keyword.url'
+        name: 'mdkeyword.url'
         match: 'https?:\\/\\/([\\w-]+\\.?)+(:\\d+)?(\\/[-\\.\\w@:]+)*(\\/)?(\\?[^\\s]+)?(#[-\\.\\w]+)?'
       },
       {
         match: '\\[\\[(.*)\\]\\]'
         captures: {
-          1: name: 'keyword.mdlink1'
+          1: name: 'mdkeyword.mdlink1'
         }
       },
       {
-        name: 'keyword.date'
+        name: 'mdkeyword.date'
         match: "\\d{2}/\\d{2}/\\d{4}|\\d{2}-\\d{2}-\\d{4}"
+      },
+      {
+        name: 'mdkeyword.tag'
+        match: "#([\\w|-]+){1,}"
       },
     ]
 
@@ -173,10 +177,6 @@ repository:
         name: 'label.green'
         match: '#>'
       },
-      {
-        name: 'label.tag'
-        match: "#([\\w|-]+){1,}"
-      }
     ]
 
 # --------------------------------------
