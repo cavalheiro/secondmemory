@@ -147,13 +147,7 @@ repository:
       {
         begin: '[ ]*```'
         end: '```'
-        patterns: [
-          match: '^(.*)$'
-          captures: {
-            1:
-              name: 'codeblock'
-          }
-        ]
+        name: 'codeblock'
       }
     ]
 
