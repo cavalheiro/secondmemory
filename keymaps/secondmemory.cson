@@ -2,6 +2,7 @@
 
   'ctrl-1': 'sm:createHeading'
   'ctrl-2': 'sm:createList'
+  'ctrl-3': 'sm:createQuote'
 
   'tab': 'sm:indent',
   'shift-tab': 'sm:outdent'

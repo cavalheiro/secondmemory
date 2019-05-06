@@ -1,6 +1,6 @@
 # What Is Second Memory?
 
-Second memory is a way to keep loose notes and journals inside of Atom editor, with markdown highlighting and some org-mode features.
+Second memory is a way to keep note cards and journals inside of Atom editor, with markdown highlighting and some org-mode features.
 
 ## Usage
 
@@ -8,6 +8,7 @@ Second memory is a way to keep loose notes and journals inside of Atom editor, w
 |-------------------|--------------------------------------------------------------------|
 | ctrl-1            | Create Heading                                                     |
 | ctrl-2            | Create List                                                        |
+| ctrl-3            | Create Quote                                                       |
 
 When in a `Heading`
 
