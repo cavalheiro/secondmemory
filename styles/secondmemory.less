@@ -4,7 +4,15 @@
 atom-text-editor {
   .syntax--secondmemory {
 
-    color: @syntax-text-color;
+    // Colors
+    @head-color: hsl(150, 40%, 50%);
+    @h1-color: saturate(@syntax-text-color, 50%);
+    @h2-color: saturate(@syntax-text-color, 25%);
+    @h3-color: lighten(saturate(@syntax-text-color, 10%), 5%);
+    @h4-color: lighten(@syntax-text-color, 10%);
+    @h5-color: lighten(@syntax-text-color, 5%);
+    @quote-color: darken(@syntax-text-color, 10%);
+    @link-color: saturate(@syntax-text-color, 20%);
 
 // ---------------
 //  Root elements
@@ -18,25 +26,26 @@ atom-text-editor {
       }
       .syntax--h1.syntax--text {
         font-weight: bold;
-        font-style: italic;
-        color: @syntax-color-method;
+        color: @h1-color;
       }
       .syntax--h2.syntax--text {
         font-weight: bold;
-        color: @syntax-color-method;
+        color: @h2-color;
       }
       .syntax--h3.syntax--text {
-        color: @syntax-color-method;
+        font-weight: bold;
+        color: @h3-color;
       }
       .syntax--h4.syntax--text {
         font-weight: bold;
-        font-style: italic;
+        color: @h4-color;
       }
       .syntax--h5.syntax--text {
         font-weight: bold;
+        color: @h5-color;
       }
       .syntax--h6.syntax--text {
-        font-style: italic;
+        font-weight: bold;
       }
     }
 
@@ -49,7 +58,7 @@ atom-text-editor {
 
     // Quotes
     .syntax--quote {
-       color: @text-color;
+       color: @quote-color;
        .syntax--symbol {
        }
       .syntax--text {
@@ -73,7 +82,7 @@ atom-text-editor {
       font-style: italic;
     }
     .syntax--mdkeyword.syntax--url {
-      color: @syntax-color-snippet;
+      color: @link-color;
     }
     .syntax--mdkeyword.syntax--tag {
       // color: @syntax-color-tag;
@@ -82,7 +91,7 @@ atom-text-editor {
     .syntax--mdkeyword.syntax--mdlink1 {
     }
     .syntax--mdkeyword.syntax--active-link {
-      color: @syntax-color-snippet;
+      color: @link-color;
       text-decoration: underline;
       cursor: pointer;
     }
