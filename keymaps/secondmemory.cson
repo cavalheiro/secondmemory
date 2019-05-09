@@ -8,10 +8,11 @@
   'shift-tab': 'sm:outdent'
   'enter': 'sm:newLine'
   'shift-enter': 'sm:insertLineBefore'
-  'ctrl-space': 'sm:toggleCheckbox'
 
-  'ctrl-i d': 'sm:insertDate'
-
-  'alt-s': 'sm:strikeout'
+  'alt-x': 'sm:toggleCheckbox'
+  'alt-s': 'sm:star'
+  'alt-o': 'sm:strikeout'
   'alt-b': 'sm:bold'
   'alt-i': 'sm:italic'
+
+  'ctrl-i d': 'sm:insertDate'

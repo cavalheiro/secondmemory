@@ -5,14 +5,17 @@ atom-text-editor {
   .syntax--secondmemory {
 
     // Colors
-    @head-color: hsl(150, 40%, 50%);
-    @h1-color: saturate(@syntax-text-color, 50%);
-    @h2-color: saturate(@syntax-text-color, 25%);
-    @h3-color: lighten(saturate(@syntax-text-color, 10%), 5%);
-    @h4-color: lighten(@syntax-text-color, 10%);
-    @h5-color: lighten(@syntax-text-color, 5%);
+    @sm-hue: saturate(@syntax-text-color, 25%);
+    @h1-color: darken(@sm-hue, 20);
+    @h2-color: darken(@sm-hue, 10);
+    @h3-color: @sm-hue;
+    @h4-color: @syntax-text-color;
+    @h5-color: darken(@syntax-text-color, 5%);
+    @h6-color: darken(@syntax-text-color, 10%);
     @quote-color: darken(@syntax-text-color, 10%);
-    @link-color: saturate(@syntax-text-color, 20%);
+    @link-color: @sm-hue;
+    @codeblock-color: spin(@sm-hue, 200);
+
 
 // ---------------
 //  Root elements
@@ -46,6 +49,7 @@ atom-text-editor {
       }
       .syntax--h6.syntax--text {
         font-weight: bold;
+        color: @h6-color;
       }
     }
 
@@ -68,7 +72,7 @@ atom-text-editor {
 
     // Code block
     .syntax--codeblock {
-      color: @syntax-color-snippet;
+      color: @codeblock-color;
     }
 
 // ----------
