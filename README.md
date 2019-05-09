@@ -24,7 +24,8 @@ When inside a `List`
 | tab               | Indent list item                                                   |
 | shift-tab         | Outdent list item                                                  |
 | enter             | Create new list item                                               |
-| ctrl-space        | Create / update Org checkbox                                       |
+| alt-s             | Star list item                                                     |
+| alt-x             | Create / update Org checkbox                                       |
 
 ## Examples
 
