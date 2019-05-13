@@ -13,8 +13,8 @@ atom-text-editor {
     @h5-color: darken(@syntax-text-color, 5%);
     @h6-color: darken(@syntax-text-color, 10%);
     @quote-color: darken(@syntax-text-color, 10%);
-    @link-color: @sm-hue;
-    @codeblock-color: spin(@sm-hue, 200);
+    @codeblock-color: spin(@sm-hue, 90);
+    @link-color: @codeblock-color;
 
 
 // ---------------
@@ -89,7 +89,6 @@ atom-text-editor {
       color: @link-color;
     }
     .syntax--mdkeyword.syntax--tag {
-      // color: @syntax-color-tag;
       font-weight: bold;
     }
     .syntax--mdkeyword.syntax--mdlink1 {
@@ -100,7 +99,7 @@ atom-text-editor {
       cursor: pointer;
     }
     .syntax--mdkeyword.syntax--date {
-      font-style: italic;
+      font-weight: bolder;
     }
     .syntax--mdkeyword.syntax--star {
       color: @text-color-warning;
