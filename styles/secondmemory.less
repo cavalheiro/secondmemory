@@ -7,15 +7,14 @@ atom-text-editor {
   .syntax--secondmemory {
 
     // Colors
-    @sm-hue: saturate(@syntax-text-color, 10%);
-    @h1-color: darken(@sm-hue, 10);
-    @h2-color: darken(@sm-hue, 5);
-    @h3-color: @sm-hue;
+    @h1-color: saturate(@syntax-text-color, 50%);
+    @h2-color: saturate(@syntax-text-color, 25%);
+    @h3-color: saturate(@syntax-text-color, 5%);
     @h4-color: lighten(@syntax-text-color, 5%);
     @h5-color: @syntax-text-color;
     @h6-color: darken(@syntax-text-color, 10%);
     @quote-color: darken(@syntax-text-color, 10%);
-    @codeblock-color: spin(@sm-hue, 180);
+    @codeblock-color: spin(saturate(@syntax-text-color, 20%), 180);
     @link-color: @codeblock-color;
 
 
@@ -31,24 +30,24 @@ atom-text-editor {
       }
       .syntax--h1.syntax--text {
         font-weight: bold;
-        font-size: 140%;
+        font-size: 1.40em;
         line-height:0.8em;
         color: @h1-color;
       }
       .syntax--h2.syntax--text {
         font-weight: bold;
-        font-size: 130%;
+        font-size: 1.25em;
         line-height:0.8em;
         color: @h2-color;
       }
       .syntax--h3.syntax--text {
         font-weight: bold;
-        font-size: 120%;
+        font-size: 1.15em;
         line-height:0.8em;
         color: @h3-color;
       }
       .syntax--h4.syntax--text {
-        font-size: 110%;
+        font-size: 1.1em;
         line-height:0.8em;
         font-weight: bold;
         color: @h4-color;
