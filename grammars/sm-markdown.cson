@@ -88,7 +88,7 @@ repository:
     patterns: [
       {
         name: 'bullet'
-        match: '^(\\s*)([-*])[ ](.*)$'
+        match: '^(\\s*)([-*+])[ ](.*)$'
         captures: {
           1:
               name: 'leadingspace'
@@ -156,7 +156,7 @@ repository:
     patterns: [
       {
         name: 'emphasis.strikethrough'
-        match: '(?<!\\w)(~~)([^~]*)(~~)(?=\\s|$)'
+        match: '(?<!\\w)(~~)([^~]*)(~~)(?!\\w)'
         captures: {
           1: name: 'emphasis.symbol'
           2: name: 'emphasis.text'
@@ -165,7 +165,7 @@ repository:
       },
       {
         name: 'emphasis.bold'
-        match: '(?<!\\w)([*]{2})([^~]*)([*]{2})(?=\\s|$)'
+        match: '(?<!\\w)([*]{2})([^~]*)([*]{2})(?!\\w)'
         captures: {
           1: name: 'emphasis.symbol'
           2: name: 'emphasis.text'
@@ -174,7 +174,7 @@ repository:
       },
       {
         name: 'emphasis.italic'
-        match: '(?<!\\w)([_])([^~_]*)([_])(?=\\s|$)'
+        match: '(?<!\\w)([_])([^~_]*)([_])(?!\\w)'
         captures: {
           1: name: 'emphasis.symbol'
           2: name: 'emphasis.text'
