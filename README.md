@@ -2,13 +2,25 @@
 
 Second memory is a way to keep note cards and journals inside of Atom editor, with markdown highlighting and some org-mode features.
 
-## Usage
+### Key maps
+
+#### Main elements
 
 | Keystroke         | Behaviour                                                          |
 |-------------------|--------------------------------------------------------------------|
-| ctrl-1            | Create Heading                                                     |
-| ctrl-2            | Create List                                                        |
-| ctrl-3            | Create Quote                                                       |
+| ctrl-1            | Toggle Heading                                                     |
+| ctrl-2            | Toggle List                                                        |
+| ctrl-3            | Toggle Quote                                                       |
+
+#### Emphasis
+
+| Keystroke         | Behaviour                                                          |
+|-------------------|--------------------------------------------------------------------|
+| alt-b             | Bold                                                               |
+| alt-i             | Italic                                                             |
+| alt-s             | Strikethrough                                                      |
+
+#### Scope specific
 
 When in a `Heading`
 
@@ -24,8 +36,8 @@ When inside a `List`
 | tab               | Indent list item                                                   |
 | shift-tab         | Outdent list item                                                  |
 | enter             | Create new list item                                               |
-| alt-s             | Star list item                                                     |
-| alt-x             | Create / update Org checkbox                                       |
+| ctrl-alt-s        | Star list item                                                     |
+| ctrl-alt-x        | Create / update Org checkbox                                       |
 
 ## Examples
 

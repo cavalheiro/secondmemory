@@ -9,9 +9,9 @@
   'enter': 'sm:newLine'
   'shift-enter': 'sm:insertLineBefore'
 
-  'alt-x': 'sm:toggleCheckbox'
-  'alt-s': 'sm:star'
-  'alt-o': 'sm:strikeout'
+  'ctrl-alt-x': 'sm:toggleCheckbox'
+  'ctrl-alt-s': 'sm:star'
+  'alt-s': 'sm:strikethrough'
   'alt-b': 'sm:bold'
   'alt-i': 'sm:italic'
 

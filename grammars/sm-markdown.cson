@@ -165,7 +165,7 @@ repository:
       },
       {
         name: 'emphasis.bold'
-        match: '(?<!\\w)([*]{2})([^~]*)([*]{2})(?!\\w)'
+        match: '(?<!\\w)(\\*{2})([^*]*)(\\*{2})(?!\\w)'
         captures: {
           1: name: 'emphasis.symbol'
           2: name: 'emphasis.text'
@@ -174,7 +174,7 @@ repository:
       },
       {
         name: 'emphasis.italic'
-        match: '(?<!\\w)([_])([^~_]*)([_])(?!\\w)'
+        match: '(?<!\\w)([_])(.*)([_])(?!\\w)'
         captures: {
           1: name: 'emphasis.symbol'
           2: name: 'emphasis.text'
