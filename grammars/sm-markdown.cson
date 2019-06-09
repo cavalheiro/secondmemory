@@ -156,28 +156,43 @@ repository:
     patterns: [
       {
         name: 'emphasis.strikethrough'
-        match: '(?<!\\w)(~~)([^~]*)(~~)(?!\\w)'
+        match: '(~~)(.*)(~~)'
         captures: {
           1: name: 'emphasis.symbol'
-          2: name: 'emphasis.text'
+          2: 
+            name: 'emphasis.text'
+            patterns: [
+              { include: "#emphasis" }
+              { include: "#keywords" }
+            ]
           3: name: 'emphasis.symbol'
         }
       },
       {
         name: 'emphasis.bold'
-        match: '(?<!\\w)(\\*{2})([^*]*)(\\*{2})(?!\\w)'
+        match: '(\\*{2})(.*)(\\*{2})'
         captures: {
           1: name: 'emphasis.symbol'
-          2: name: 'emphasis.text'
+          2: 
+            name: 'emphasis.text'
+            patterns: [
+              { include: "#emphasis" }
+              { include: "#keywords" }
+            ]
           3: name: 'emphasis.symbol'
         }
       },
       {
         name: 'emphasis.italic'
-        match: '(?<!\\w)([_])(.*)([_])(?!\\w)'
+        match: '([_])(.*)([_])'
         captures: {
           1: name: 'emphasis.symbol'
-          2: name: 'emphasis.text'
+          2: 
+            name: 'emphasis.text'
+            patterns: [
+              { include: "#emphasis" }
+              { include: "#keywords" }
+            ]
           3: name: 'emphasis.symbol'
         }
       }
