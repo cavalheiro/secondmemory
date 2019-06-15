@@ -13,9 +13,11 @@ atom-text-editor {
     @h4-color: lighten(@syntax-text-color, 5%);
     @h5-color: @syntax-text-color;
     @h6-color: darken(@syntax-text-color, 10%);
-    @emphasis-color: lighten(@syntax-text-color, 10%);
-    @list-symbol-color: lighten(@syntax-text-color, 30%);
-    @quote-color: darken(@syntax-text-color, 10%);
+    @emphasis-color: text-color-highlight;
+    @list-symbol-color: @text-color-highlight;
+    @subtle-color: contrast(@syntax-text-color,
+                   darken(@syntax-text-color, 20%),
+                   lighten(@syntax-text-color, 20%));
     @codeblock-color: spin(saturate(@syntax-text-color, 20%), 180);
     @link-color: @codeblock-color;
 
@@ -66,19 +68,22 @@ atom-text-editor {
 
     // Bullets
     .syntax--bullet {
+      margin-left: 5px;
       .syntax--symbol {
-        // font-weight: bolder;
         color: @list-symbol-color;
       }
     }
 
     // Quotes
     .syntax--quote {
-       color: @quote-color;
-       .syntax--symbol {
-       }
+      margin-left: 10px;
+      .syntax--symbol {
+        color: @syntax-invisible-character-color;
+      }
       .syntax--text {
+        color: @subtle-color;
         font-style: italic;
+        margin-left: 5px;
       }
      }
 
