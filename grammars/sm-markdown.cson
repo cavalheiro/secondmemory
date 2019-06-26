@@ -21,65 +21,63 @@ repository:
         { include: "#plaintext" }
     ]
 
-# ---------------
-#  Core elements
-# ---------------
-
   headings:
     patterns: [
       {
-        match: '^(#{1,6})\\s(.*)$'
-        captures:
-          0:
-            name: "heading"
-            patterns: [
-              { include: "#textheadings" }
-            ]
-      }
-    ]
-  textheadings:
-    patterns: [
-      {
-        match: '^(#)[ ]((.*))$'
-        captures:
-          1: name: 'symbol'
-          2: name: 'h1.text'
-          3: name: 'text'
-      },
-      {
-        match: '^(#{2})[ ]((.*))$'
-        captures:
-          1: name: 'symbol'
-          2: name: 'h2.text'
-          3: name: 'text'
-      },
-      {
-        match: '^(#{3})[ ]((.*))$'
-        captures:
-          1: name: 'symbol'
-          2: name: 'h3.text'
-          3: name: 'text'
-      },
-      {
-        match: '^(#{4})[ ]((.*))$'
-        captures:
-          1: name: 'symbol'
-          2: name: 'h4.text'
-          3: name: 'text'
-      },
-      {
-        match: '^(#{5})[ ]((.*))$'
-        captures:
-          1: name: 'symbol'
-          2: name: 'h5.text'
-          3: name: 'text'
-      },
-      {
-        match: '^(#{6})[ ]((.*))$'
-        captures:
-          1: name: 'symbol'
-          2: name: 'h6.text'
-          3: name: 'text'
+        match: '^#{1,6}[ ].*$'
+        name: 'heading'
+        captures: {
+          0: patterns: [
+            {
+              match: '(#)([ ])(.*)$'
+              name: 'h1'
+              captures:
+                1: name: 'symbol'
+                2: name: 'separator'
+                3: name: 'text'
+            }
+            {
+              match: '(#{2})([ ])(.*)$'
+              name: 'h2'
+              captures:
+                1: name: 'symbol'
+                2: name: 'separator'
+                3: name: 'text'
+            }
+            {
+              match: '(#{3})([ ])(.*)$'
+              name: 'h3'
+              captures:
+                1: name: 'symbol'
+                2: name: 'separator'
+                3: name: 'text'
+            }
+            {
+              match: '(#{4})([ ])(.*)$'
+              name: 'h4'
+              captures:
+                1: name: 'symbol'
+                2: name: 'separator'
+                3: name: 'text'
+            }
+            {
+              match: '(#{5})([ ])(.*)$'
+              name: 'h5'
+              captures:
+                1: name: 'symbol'
+                2: name: 'separator'
+                3: name: 'text'
+            }
+            {
+              match: '(#{6})([ ])(.*)$'
+              name: 'h6'
+              captures:
+                1: name: 'symbol'
+                2: name: 'separator'
+                3: name: 'text'
+            }
+          ]
+        }
       }
     ]
 
@@ -127,6 +125,7 @@ repository:
     patterns: [
       {
         match: '^(\\s*)(.*)$'
+        name: 'plaintext'
         captures: {
           1:
               name: 'leadingspace'
@@ -159,7 +158,7 @@ repository:
         match: '(~~)(.*)(~~)'
         captures: {
           1: name: 'emphasis.symbol'
-          2: 
+          2:
             name: 'emphasis.text'
             patterns: [
               { include: "#emphasis" }
@@ -173,7 +172,7 @@ repository:
         match: '(\\*{2})(.*)(\\*{2})'
         captures: {
           1: name: 'emphasis.symbol'
-          2: 
+          2:
             name: 'emphasis.text'
             patterns: [
               { include: "#emphasis" }
@@ -187,7 +186,7 @@ repository:
         match: '([_])(.*)([_])'
         captures: {
           1: name: 'emphasis.symbol'
-          2: 
+          2:
             name: 'emphasis.text'
             patterns: [
               { include: "#emphasis" }
