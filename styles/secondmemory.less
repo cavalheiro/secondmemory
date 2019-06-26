@@ -7,70 +7,111 @@ atom-text-editor {
   .syntax--secondmemory {
 
     // Colors
-    @h1-color: saturate(@syntax-text-color, 50%);
-    @h2-color: saturate(@syntax-text-color, 25%);
-    @h3-color: saturate(@syntax-text-color, 5%);
-    @h4-color: lighten(@syntax-text-color, 5%);
-    @h5-color: @syntax-text-color;
-    @h6-color: darken(@syntax-text-color, 10%);
-    @emphasis-color: text-color-highlight;
-    @list-symbol-color: @text-color-highlight;
-    @subtle-color: contrast(@syntax-text-color,
-                   darken(@syntax-text-color, 20%),
-                   lighten(@syntax-text-color, 20%));
-    @codeblock-color: spin(saturate(@syntax-text-color, 20%), 180);
-    @link-color: @codeblock-color;
+    @base-color: contrast(@syntax-background-color,
+                lighten(@syntax-text-color, 5%),
+                 darken(@syntax-text-color, 5%));
 
+    @subtle-color: contrast(#fff - @syntax-background-color,
+                   lighten(@syntax-text-color, 10%),
+                   darken(@syntax-text-color, 10%));
+
+    @emphasis-color: contrast(@syntax-background-color,
+                     lighten(@syntax-text-color, 10%),
+                     darken(@syntax-text-color, 10%));
+
+    @h1-color: contrast(@syntax-background-color,
+               lighten(@base-color, 25%),
+               darken(@base-color, 25%));
+    @h2-color: contrast(@syntax-background-color,
+               lighten(@base-color, 25%),
+               darken(@base-color, 25%));
+    @h3-color: contrast(@syntax-background-color,
+               lighten(@base-color, 12%),
+               darken(@base-color, 12%));
+    @h4-color: contrast(@syntax-background-color,
+               lighten(@base-color, 7%),
+               darken(@base-color, 7%));
+    @h5-color: contrast(@syntax-background-color,
+               lighten(@base-color, 7%),
+               darken(@base-color, 7%));
+    @h6-color: @base-color;
+
+    @list-symbol-color: @h1-color;
+    @codeblock-color: spin(saturate(@syntax-text-color, 40%), 180);
+    @link-color: @codeblock-color;
 
 // ---------------
 //  Root elements
 // ---------------
 
+    color: @base-color;
+
+    // Plain text
+    .syntax--plaintext {
+      margin-left: 10px;
+    }
+
     // Headings
     .syntax--heading {
       .syntax--symbol {
         color: @syntax-invisible-character-color;
-        font-size: 75%;
+        font-size: 60%;
       }
-      .syntax--h1.syntax--text {
-        font-weight: bold;
-        font-size: 1.40em;
-        line-height:0.8em;
-        color: @h1-color;
+      .syntax--separator {
+        font-size: 10%;
       }
-      .syntax--h2.syntax--text {
-        font-weight: bold;
-        font-size: 1.25em;
-        line-height:0.8em;
-        color: @h2-color;
+      .syntax--h1 {
+        .syntax--text {
+          font-weight: bold;
+          font-size: 1.40em;
+          line-height:0.8em;
+          color: @h1-color;
+        }
       }
-      .syntax--h3.syntax--text {
-        font-weight: bold;
-        font-size: 1.15em;
-        line-height:0.8em;
-        color: @h3-color;
+      .syntax--h2 {
+        .syntax--text {
+          font-weight: bold;
+          font-size: 1.25em;
+          line-height:0.8em;
+          color: @h2-color;
+        }
       }
-      .syntax--h4.syntax--text {
-        font-size: 1.1em;
-        line-height:0.8em;
-        font-weight: bold;
-        color: @h4-color;
+      .syntax--h3 {
+        .syntax--text {
+          font-weight: bold;
+          font-size: 1.15em;
+          line-height:0.8em;
+          color: @h3-color;
+        }
       }
-      .syntax--h5.syntax--text {
-        font-weight: bold;
-        color: @h5-color;
+      .syntax--h4 {
+        .syntax--text {
+          font-size: 1.1em;
+          line-height:0.8em;
+          font-weight: bold;
+          color: @h4-color;
+        }
       }
-      .syntax--h6.syntax--text {
-        font-weight: bold;
-        color: @h6-color;
+      .syntax--h5 {
+        .syntax--text {
+          font-weight: bold;
+          color: @h5-color;
+        }
+      }
+      .syntax--h6 {
+        .syntax--text {
+          font-weight: bold;
+          color: @h6-color;
+        }
       }
     }
 
     // Bullets
     .syntax--bullet {
-      margin-left: 5px;
+      margin-left: 15px;
       .syntax--symbol {
         color: @list-symbol-color;
+        font-weight: bold;
       }
     }
 
@@ -178,6 +219,7 @@ atom-text-editor {
 
     .syntax--emphasis.syntax--symbol {
       color: @text-color-subtle;
+      font-size: 60%;
     }
     .syntax--emphasis.syntax--strikethrough {
       .syntax--emphasis.syntax--text {
