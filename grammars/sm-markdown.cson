@@ -155,7 +155,7 @@ repository:
     patterns: [
       {
         name: 'emphasis.strikethrough'
-        match: '(~~)(.*)(~~)'
+        match: '(~~)([^~]*)(~~)'
         captures: {
           1: name: 'emphasis.symbol'
           2:
@@ -169,7 +169,7 @@ repository:
       },
       {
         name: 'emphasis.bold'
-        match: '(\\*{2})(.*)(\\*{2})'
+        match: '(\\*{2})([^*]*)(\\*{2})'
         captures: {
           1: name: 'emphasis.symbol'
           2:
@@ -183,7 +183,7 @@ repository:
       },
       {
         name: 'emphasis.italic'
-        match: '([_])(.*)([_])'
+        match: '([_])([^_]*)([_])'
         captures: {
           1: name: 'emphasis.symbol'
           2:
