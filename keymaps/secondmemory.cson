@@ -15,4 +15,6 @@
   'alt-b': 'sm:bold'
   'alt-i': 'sm:italic'
 
-  'ctrl-i d': 'sm:insertDate'
+  'ctrl-i d d': 'sm:insertDate'
+  'ctrl-i d w': 'sm:insertDateWorkday'
+  'ctrl-i d n': 'sm:insertDateWeekNumber'
