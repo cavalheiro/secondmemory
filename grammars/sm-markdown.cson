@@ -120,6 +120,17 @@ repository:
       }
     ]
 
+  section:
+    patterns: [
+      {
+        match: '(^[^:]+):$'
+        captures: {
+          1:
+              name: 'section'
+        }
+      }
+    ]
+
   # Plain text
   plaintext:
     patterns: [
@@ -133,6 +144,7 @@ repository:
               name: 'text'
               patterns: [
                 { include: "#emphasis" }
+                { include: "#section" }
                 { include: "#keywords" }
                 { include: "#checkboxes" }
               ]
@@ -209,12 +221,24 @@ repository:
         match: '(\\w+\\.?)+@(\\w+\\.?)+'
       },
       {
+        match: "(TODO):"
+        captures: {
+          1: name: 'mdkeyword.todo'
+        }
+      },
+      {
+        match: '^((\\s?[^\\s]+){1,1}):(\\s|$)'
+        captures: {
+          1: name: 'mdkeyword.key'
+        }
+      },
+      {
         name: 'mdkeyword.nickname'
         match: '@([\\w]+)'
       },
       {
         name: 'mdkeyword.url'
-        match: 'https?:\\/\\/([\\w-]+\\.?)+(:\\d+)?(\\/[\\(\\)-\\.\\w@:$]+)*(\\/)?(\\?[^\\s]+)?(#[-\\.\\w]+)?'
+        match: 'https?:\\/\\/([\\w-]+\\.?)+(:\\d+)?(\\/[\\(\\)-\\.\\w@:$%]+)*(\\/)?(\\?[^\\s]+)?(#[-\\.\\w]+)?'
       },
       {
         match: '\\[\\[(.*)\\]\\]'
@@ -229,11 +253,11 @@ repository:
       {
         name: 'mdkeyword.tag'
         match: "#([\\w|-]+){1,}"
-      },
+      }
       {
         name: 'mdkeyword.star'
-        match: "⭐"
-      },
+        match: "★"
+      }
     ]
 
 # ----------------

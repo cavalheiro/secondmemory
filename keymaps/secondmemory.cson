@@ -9,12 +9,16 @@
   'enter': 'sm:newLine'
   'shift-enter': 'sm:insertLineBefore'
 
+  'ctrl-;': 'sm:chat'
   'ctrl-alt-x': 'sm:toggleCheckbox'
   'ctrl-alt-s': 'sm:star'
+  'ctrl-?': 'sm:question'
+  'ctrl-!': 'sm:exclamation'
   'alt-s': 'sm:strikethrough'
   'alt-b': 'sm:bold'
   'alt-i': 'sm:italic'
 
   'ctrl-d d': 'sm:insertDate'
+  'ctrl-d l': 'sm:insertDateLong'
   'ctrl-d e': 'sm:insertDateWorkday'
   'ctrl-d w': 'sm:insertDateWeekNumber'
