@@ -86,7 +86,22 @@ repository:
     patterns: [
       {
         name: 'bullet'
-        match: '^(\\s*)([-*+])[ ](.*)$'
+        match: '^([-*+])[ ](.*)$'
+        captures: {
+          1:
+              name: 'symbol'
+          2:
+              name: 'text'
+              patterns: [
+                { include: "#checkboxes" }
+                { include: "#emphasis" }
+                { include: "#keywords" }
+              ]
+        }
+      },
+      {
+        name: 'innerbullet'
+        match: '^(\\s{2,})([-*+])[ ](.*)$'
         captures: {
           1:
               name: 'leadingspace'
@@ -256,7 +271,7 @@ repository:
       }
       {
         name: 'mdkeyword.star'
-        match: "★"
+        match: "⭐"
       }
     ]
 

@@ -8,16 +8,16 @@ atom-text-editor {
 
     // Colors
     @base-color: contrast(@syntax-background-color,
-                lighten(@syntax-text-color, 5%),
-                 darken(@syntax-text-color, 5%));
+                lighten(@syntax-text-color, 15%),
+                 darken(@syntax-text-color, 15%));
 
     @subtle-color: contrast(#fff - @syntax-background-color,
                    lighten(@syntax-text-color, 10%),
                    darken(@syntax-text-color, 10%));
 
     @emphasis-color: contrast(@syntax-background-color,
-                     lighten(@syntax-text-color, 10%),
-                     darken(@syntax-text-color, 10%));
+                     lighten(@syntax-text-color, 20%),
+                     darken(@syntax-text-color, 20%));
 
     @h1-color: contrast(@syntax-background-color,
                lighten(@base-color, 25%),
@@ -36,7 +36,7 @@ atom-text-editor {
                darken(@base-color, 7%));
     @h6-color: @base-color;
 
-    @list-symbol-color: @h1-color;
+    @list-symbol-color: @text-color-error;
     @codeblock-color: spin(saturate(@syntax-text-color, 40%), 180);
     @link-color: @codeblock-color;
 
@@ -48,7 +48,7 @@ atom-text-editor {
 
     // Plain text
     .syntax--plaintext {
-      color: @subtle-color;
+      // color: @subtle-color;
       // margin-left: 10px;
     }
 
@@ -56,15 +56,15 @@ atom-text-editor {
     .syntax--heading {
       .syntax--symbol {
         color: @syntax-invisible-character-color;
-        font-size: 70%;
+        font-size: 80%;
       }
       .syntax--separator {
-        font-size: 10%;
+        font-size: 50%;
       }
       .syntax--h1 {
         .syntax--text {
           font-weight: bold;
-          font-size: 1.40em;
+          font-size: 1.20em;
           line-height:0.8em;
           color: @h1-color;
         }
@@ -72,7 +72,7 @@ atom-text-editor {
       .syntax--h2 {
         .syntax--text {
           font-weight: bold;
-          font-size: 1.25em;
+          font-size: 1.15em;
           line-height:0.8em;
           color: @h2-color;
         }
@@ -80,14 +80,14 @@ atom-text-editor {
       .syntax--h3 {
         .syntax--text {
           font-weight: bold;
-          font-size: 1.15em;
+          font-size: 1.10em;
           line-height:0.8em;
           color: @h3-color;
         }
       }
       .syntax--h4 {
         .syntax--text {
-          font-size: 1.1em;
+          font-size: 1.05em;
           line-height:0.8em;
           font-weight: bold;
           color: @h4-color;
@@ -112,7 +112,18 @@ atom-text-editor {
       margin-left: 10px;
       .syntax--symbol {
         color: @list-symbol-color;
-        font-weight: bold;
+        // font-weight: bold;
+      }
+    }
+    .syntax--innerbullet {
+      margin-left: 10px;
+      .syntax--symbol {
+        color: @list-symbol-color;
+        // font-weight: bold;
+      }
+      .syntax--text {
+        color: @subtle-color;
+        // font-weight: bold;
       }
     }
 
@@ -125,7 +136,7 @@ atom-text-editor {
       .syntax--text {
         color: @subtle-color;
         font-style: italic;
-        // margin-left: 5px;
+        margin-left: 10px;
       }
      }
 
@@ -137,8 +148,8 @@ atom-text-editor {
     // Section
     .syntax--section {
       // color: @text-color-success;
-      font-weight: bold;
-      font-style: italic;
+      // font-weight: bold;
+      // font-style: italic;
     }
 
 // ----------
@@ -148,7 +159,7 @@ atom-text-editor {
     .syntax--mdkeyword.syntax--key {
       // color: @text-color-success;
       // font-style: italic;
-      text-decoration: underline;
+      // text-decoration: underline;
     }
     .syntax--mdkeyword.syntax--nickname {
       // font-style: italic;
@@ -161,7 +172,7 @@ atom-text-editor {
       color: @link-color;
     }
     .syntax--mdkeyword.syntax--tag {
-      font-weight: bold;
+      // font-weight: bold;
       color: @text-color-info;
     }
     .syntax--mdkeyword.syntax--mdlink1 {
@@ -231,22 +242,6 @@ atom-text-editor {
       .syntax--text {
         color: @text-color-subtle;
         text-decoration: line-through;
-      }
-    }
-
-// ----------------
-//  chat
-// ----------------
-
-    .syntax--chat {
-      .syntax--chat_symbol_out  {
-        color: @text-color-warning;
-      }
-      .syntax--chat_symbol_in  {
-        color: @text-color-info;
-      }
-      .syntax--chat_text_in {
-        // color: @text-color-subtle;
       }
     }
 
