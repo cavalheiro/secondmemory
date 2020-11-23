@@ -12,8 +12,8 @@ atom-text-editor {
                  darken(@syntax-text-color, 15%));
 
     @subtle-color: contrast(#fff - @syntax-background-color,
-                   lighten(@syntax-text-color, 10%),
-                   darken(@syntax-text-color, 10%));
+                   lighten(@syntax-text-color, 5%),
+                   darken(@syntax-text-color, 5%));
 
     @emphasis-color: contrast(@syntax-background-color,
                      lighten(@syntax-text-color, 20%),
@@ -26,14 +26,14 @@ atom-text-editor {
                lighten(@base-color, 25%),
                darken(@base-color, 25%));
     @h3-color: contrast(@syntax-background-color,
-               lighten(@base-color, 12%),
-               darken(@base-color, 12%));
+               lighten(@base-color, 25%),
+               darken(@base-color, 25%));
     @h4-color: contrast(@syntax-background-color,
-               lighten(@base-color, 7%),
-               darken(@base-color, 7%));
+               lighten(@base-color, 10%),
+               darken(@base-color, 10%));
     @h5-color: contrast(@syntax-background-color,
-               lighten(@base-color, 7%),
-               darken(@base-color, 7%));
+               lighten(@base-color, 5%),
+               darken(@base-color, 5%));
     @h6-color: @base-color;
 
     @list-symbol-color: @text-color-error;
@@ -72,7 +72,7 @@ atom-text-editor {
       .syntax--h2 {
         .syntax--text {
           font-weight: bold;
-          font-size: 1.15em;
+          font-size: 1.10em;
           line-height:0.8em;
           color: @h2-color;
         }
@@ -80,15 +80,15 @@ atom-text-editor {
       .syntax--h3 {
         .syntax--text {
           font-weight: bold;
-          font-size: 1.10em;
-          line-height:0.8em;
+          // font-size: 1.00em;
+          // line-height:0.8em;
           color: @h3-color;
         }
       }
       .syntax--h4 {
         .syntax--text {
-          font-size: 1.05em;
-          line-height:0.8em;
+          // font-size: 1.00em;
+          // line-height:0.8em;
           font-weight: bold;
           color: @h4-color;
         }
