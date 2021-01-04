@@ -15,7 +15,6 @@ repository:
     end: '$'
     patterns: [
         { include: "#headings" }
-        { include: "#bullets" }
         { include: "#quote" }
         { include: "#codeblock" }
         { include: "#plaintext" }
@@ -86,34 +85,42 @@ repository:
     patterns: [
       {
         name: 'bullet'
-        match: '^([-*+])[ ](.*)$'
+        match: '^(\\s*)([-*+])[ ](.*)$'
         captures: {
-          1:
-              name: 'symbol'
-          2:
-              name: 'text'
-              patterns: [
-                { include: "#checkboxes" }
-                { include: "#emphasis" }
-                { include: "#keywords" }
-              ]
-        }
-      },
-      {
-        name: 'innerbullet'
-        match: '^(\\s{2,})([-*+])[ ](.*)$'
-        captures: {
-          1:
-              name: 'leadingspace'
-          2:
-              name: 'symbol'
-          3:
-              name: 'text'
-              patterns: [
-                { include: "#checkboxes" }
-                { include: "#emphasis" }
-                { include: "#keywords" }
-              ]
+          0: patterns: [
+            {
+              name: 'inner'
+              match: '^(\\s{2,})([-*+])[ ](.*)$'
+              captures: {
+                1:
+                    name: 'leadingspace'
+                2:
+                    name: 'symbol'
+                3:
+                    name: 'text'
+                    patterns: [
+                      { include: "#checkboxes" }
+                      { include: "#emphasis" }
+                      { include: "#keywords" }
+                    ]
+              }
+            }
+            {
+              name: 'outer'
+              match: '^([-*+])[ ](.*)$'
+              captures: {
+                1:
+                    name: 'symbol'
+                2:
+                    name: 'text'
+                    patterns: [
+                      { include: "#checkboxes" }
+                      { include: "#emphasis" }
+                      { include: "#keywords" }
+                    ]
+              }
+            }
+          ]
         }
       }
     ]
@@ -150,19 +157,35 @@ repository:
   plaintext:
     patterns: [
       {
-        match: '^(\\s*)(.*)$'
+        match: '^\\s*.*$'
         name: 'plaintext'
         captures: {
-          1:
-              name: 'leadingspace'
-          2:
-              name: 'text'
-              patterns: [
-                { include: "#emphasis" }
-                { include: "#section" }
-                { include: "#keywords" }
-                { include: "#checkboxes" }
-              ]
+          0: patterns: [
+            {
+              match: '^\\s*[-*+][ ].*$'
+              captures: {
+                0:
+                  patterns: [
+                    { include: "#bullets" }
+                  ]
+              }
+            }
+            {
+              match: '^(\\s*)(.*)$'
+              captures: {
+                1:
+                  name: 'leadingspace'
+                2:
+                  name: 'text'
+                  patterns: [
+                    { include: "#emphasis" }
+                    { include: "#section" }
+                    { include: "#keywords" }
+                    # { include: "#checkboxes" }
+                  ]
+              }
+            }
+          ]
         }
       }
     ]

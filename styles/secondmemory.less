@@ -8,16 +8,20 @@ atom-text-editor {
 
     // Colors
     @base-color: contrast(@syntax-background-color,
-                lighten(@syntax-text-color, 15%),
-                 darken(@syntax-text-color, 15%));
+                lighten(@syntax-text-color, 20%),
+                 darken(@syntax-text-color, 20%));
+
+    @mild-color: contrast(@syntax-background-color,
+                   lighten(@syntax-text-color, 10%),
+                   darken(@syntax-text-color, 10%));
 
     @subtle-color: contrast(#fff - @syntax-background-color,
-                   lighten(@syntax-text-color, 5%),
-                   darken(@syntax-text-color, 5%));
+                   lighten(@syntax-text-color, 0%),
+                   darken(@syntax-text-color, 0%));
 
     @emphasis-color: contrast(@syntax-background-color,
-                     lighten(@syntax-text-color, 20%),
-                     darken(@syntax-text-color, 20%));
+                     lighten(@syntax-text-color, 30%),
+                     darken(@syntax-text-color, 30%));
 
     @h1-color: contrast(@syntax-background-color,
                lighten(@base-color, 25%),
@@ -47,10 +51,10 @@ atom-text-editor {
     color: @base-color;
 
     // Plain text
-    .syntax--plaintext {
+    // .syntax--plaintext {
       // color: @subtle-color;
       // margin-left: 10px;
-    }
+    // }
 
     // Headings
     .syntax--heading {
@@ -108,22 +112,27 @@ atom-text-editor {
     }
 
     // Bullets
-    .syntax--bullet {
-      margin-left: 10px;
-      .syntax--symbol {
-        color: @list-symbol-color;
-        // font-weight: bold;
-      }
-    }
-    .syntax--innerbullet {
-      margin-left: 10px;
-      .syntax--symbol {
-        color: @list-symbol-color;
-        // font-weight: bold;
-      }
-      .syntax--text {
-        color: @subtle-color;
-        // font-weight: bold;
+    .syntax--plaintext {
+      .syntax--bullet {
+        margin-left: 10px;
+          .syntax--symbol {
+            color: @list-symbol-color;
+          }
+          .syntax--text {
+            color: @mild-color;
+            font-size: 95%;
+          }
+        .syntax--inner {
+          margin-left: 10px;
+          .syntax--symbol {
+            color: @list-symbol-color;
+            // font-weight: bold;
+          }
+          .syntax--text {
+            color: @subtle-color;
+            font-size: 90%;
+          }
+        }
       }
     }
 
@@ -163,7 +172,9 @@ atom-text-editor {
     }
     .syntax--mdkeyword.syntax--nickname {
       // font-style: italic;
-      text-decoration: underline;
+      // font-weight: bold;
+      color: @text-color-warning;
+      // text-decoration: underline;
     }
     .syntax--mdkeyword.syntax--email {
       font-style: italic;
@@ -173,7 +184,8 @@ atom-text-editor {
     }
     .syntax--mdkeyword.syntax--tag {
       // font-weight: bold;
-      color: @text-color-info;
+      // color: @text-color-success;
+      text-decoration: underline;
     }
     .syntax--mdkeyword.syntax--mdlink1 {
     }
@@ -249,20 +261,26 @@ atom-text-editor {
 //  Emphasis
 // ----------------
 
-    .syntax--emphasis.syntax--symbol {
-      color: @text-color-subtle;
-      font-size: 60%;
-    }
     .syntax--emphasis.syntax--strikethrough {
       .syntax--emphasis.syntax--text {
         text-decoration: line-through;
       }
     }
     .syntax--emphasis.syntax--bold {
-      color: @emphasis-color;
-      font-weight: bold;
+      .syntax--emphasis.syntax--symbol {
+        color: @text-color-subtle;
+        font-size: 75%;
+      }
+      .syntax--emphasis.syntax--text {
+        color: @emphasis-color;
+        font-weight: bold;
+      }
     }
     .syntax--emphasis.syntax--italic {
+      .syntax--emphasis.syntax--symbol {
+        color: @text-color-subtle;
+        font-size: 75%;
+      }
       .syntax--emphasis.syntax--text {
         color: @emphasis-color;
         font-style: italic;
