@@ -130,7 +130,7 @@ repository:
     patterns: [
       {
         name: 'quote'
-        match: '^(\\s*)(>)[ ](.*)$'
+        match: '^(\\s*)(>{1,2})[ ](.*)$'
         captures: {
           1:
               name: 'leadingspace'

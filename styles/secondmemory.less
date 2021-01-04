@@ -8,30 +8,30 @@ atom-text-editor {
 
     // Colors
     @base-color: contrast(@syntax-background-color,
-                lighten(@syntax-text-color, 20%),
-                 darken(@syntax-text-color, 20%));
+                lighten(@syntax-text-color, 40%),
+                 darken(@syntax-text-color, 40%));
 
     @mild-color: contrast(@syntax-background-color,
-                   lighten(@syntax-text-color, 10%),
-                   darken(@syntax-text-color, 10%));
+                   lighten(@syntax-text-color, 30%),
+                   darken(@syntax-text-color, 30%));
 
-    @subtle-color: contrast(#fff - @syntax-background-color,
-                   lighten(@syntax-text-color, 0%),
-                   darken(@syntax-text-color, 0%));
+    @subtle-color: contrast(@syntax-background-color,
+                   lighten(@syntax-text-color, 15%),
+                   darken(@syntax-text-color, 15%));
 
     @emphasis-color: contrast(@syntax-background-color,
-                     lighten(@syntax-text-color, 30%),
-                     darken(@syntax-text-color, 30%));
+                     lighten(@syntax-text-color, 40%),
+                     darken(@syntax-text-color, 40%));
 
     @h1-color: contrast(@syntax-background-color,
-               lighten(@base-color, 25%),
-               darken(@base-color, 25%));
+               lighten(@base-color, 30%),
+               darken(@base-color, 30%));
     @h2-color: contrast(@syntax-background-color,
-               lighten(@base-color, 25%),
-               darken(@base-color, 25%));
+               lighten(@base-color, 20%),
+               darken(@base-color, 20%));
     @h3-color: contrast(@syntax-background-color,
-               lighten(@base-color, 25%),
-               darken(@base-color, 25%));
+               lighten(@base-color, 15%),
+               darken(@base-color, 15%));
     @h4-color: contrast(@syntax-background-color,
                lighten(@base-color, 10%),
                darken(@base-color, 10%));
@@ -48,7 +48,7 @@ atom-text-editor {
 //  Root elements
 // ---------------
 
-    color: @base-color;
+    color: @base-color;  
 
     // Plain text
     // .syntax--plaintext {
@@ -76,7 +76,7 @@ atom-text-editor {
       .syntax--h2 {
         .syntax--text {
           font-weight: bold;
-          font-size: 1.10em;
+          font-size: 1.15em;
           line-height:0.8em;
           color: @h2-color;
         }
@@ -84,14 +84,14 @@ atom-text-editor {
       .syntax--h3 {
         .syntax--text {
           font-weight: bold;
-          // font-size: 1.00em;
+          font-size: 1.10em;
           // line-height:0.8em;
           color: @h3-color;
         }
       }
       .syntax--h4 {
         .syntax--text {
-          // font-size: 1.00em;
+          font-size: 1.05em;
           // line-height:0.8em;
           font-weight: bold;
           color: @h4-color;
@@ -114,13 +114,14 @@ atom-text-editor {
     // Bullets
     .syntax--plaintext {
       .syntax--bullet {
-        margin-left: 10px;
+          margin-left: 10px;
           .syntax--symbol {
             color: @list-symbol-color;
           }
           .syntax--text {
+            margin-left: 5px;
             color: @mild-color;
-            font-size: 95%;
+            // font-size: 95%;
           }
         .syntax--inner {
           margin-left: 10px;
@@ -129,8 +130,9 @@ atom-text-editor {
             // font-weight: bold;
           }
           .syntax--text {
+            margin-left: 5px;
             color: @subtle-color;
-            font-size: 90%;
+            font-size: 95%;
           }
         }
       }
@@ -145,7 +147,7 @@ atom-text-editor {
       .syntax--text {
         color: @subtle-color;
         font-style: italic;
-        margin-left: 10px;
+        // margin-left: 10px;
       }
      }
 
