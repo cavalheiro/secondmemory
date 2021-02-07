@@ -10,13 +10,13 @@
   'alt-up': 'sm:insertLineBefore'
   'alt-down': 'sm:insertLineAfter'
 
-  'ctrl-alt-x': 'sm:toggleCheckbox'
-  'ctrl-alt-s': 'sm:star'
+  'ctrl-X': 'sm:toggleCheckbox'
+  'ctrl-S': 'sm:star'
+  'ctrl-T': 'sm:todo'
+  
   'alt-s': 'sm:strikethrough'
   'alt-b': 'sm:bold'
   'alt-i': 'sm:italic'
 
   'ctrl-d d': 'sm:insertDate'
   'ctrl-d l': 'sm:insertDateLong'
-  'ctrl-d e': 'sm:insertDateWorkday'
-  'ctrl-d w': 'sm:insertDateWeekNumber'

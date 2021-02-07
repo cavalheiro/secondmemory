@@ -85,12 +85,12 @@ repository:
     patterns: [
       {
         name: 'bullet'
-        match: '^(\\s*)([-*+])[ ](.*)$'
+        match: '^(\\s*|\\t)([-*+])[ ](.*)$'
         captures: {
           0: patterns: [
             {
               name: 'inner'
-              match: '^(\\s{2,})([-*+])[ ](.*)$'
+              match: '^(\\s{2,}|\\t{1,})([-*+])[ ](.*)$'
               captures: {
                 1:
                     name: 'leadingspace'
@@ -130,7 +130,7 @@ repository:
     patterns: [
       {
         name: 'quote'
-        match: '^(\\s*)(>{1,2})[ ](.*)$'
+        match: '^(\\s*|\\t*)(>{1,2})[ ](.*)$'
         captures: {
           1:
               name: 'leadingspace'
@@ -157,12 +157,12 @@ repository:
   plaintext:
     patterns: [
       {
-        match: '^\\s*.*$'
+        match: '^(\\s*|\\t*).*$'
         name: 'plaintext'
         captures: {
           0: patterns: [
             {
-              match: '^\\s*[-*+][ ].*$'
+              match: '^(\\s*|\\t*)[-*+][ ].*$'
               captures: {
                 0:
                   patterns: [
@@ -171,7 +171,7 @@ repository:
               }
             }
             {
-              match: '^(\\s*)(.*)$'
+              match: '^(\\s*|\\t*)(.*)$'
               captures: {
                 1:
                   name: 'leadingspace'
