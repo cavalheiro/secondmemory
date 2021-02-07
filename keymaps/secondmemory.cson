@@ -7,7 +7,8 @@
   'tab': 'sm:indent',
   'shift-tab': 'sm:outdent'
   'enter': 'sm:newLine'
-  'shift-enter': 'sm:insertLineBefore'
+  'alt-up': 'sm:insertLineBefore'
+  'alt-down': 'sm:insertLineAfter'
 
   'ctrl-alt-x': 'sm:toggleCheckbox'
   'ctrl-alt-s': 'sm:star'

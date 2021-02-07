@@ -16,8 +16,8 @@ atom-text-editor {
                    darken(@syntax-text-color, 30%));
 
     @subtle-color: contrast(@syntax-background-color,
-                   lighten(@syntax-text-color, 15%),
-                   darken(@syntax-text-color, 15%));
+                   lighten(@syntax-text-color, 10%),
+                   darken(@syntax-text-color, 10%));
 
     @emphasis-color: contrast(@syntax-background-color,
                      lighten(@syntax-text-color, 40%),
@@ -167,8 +167,8 @@ atom-text-editor {
 //  Keywords
 // ----------
 
-    .syntax--mdkeyword.syntax--key {
-      // color: @text-color-success;
+    .syntax--squote {
+      color: @subtle-color;
       // font-style: italic;
       // text-decoration: underline;
     }
@@ -177,6 +177,10 @@ atom-text-editor {
       // font-weight: bold;
       color: @text-color-warning;
       // text-decoration: underline;
+    }
+    .syntax--mdkeyword.syntax--arrow {
+      font-weight: bold;
+      color: @text-color-info;
     }
     .syntax--mdkeyword.syntax--email {
       font-style: italic;

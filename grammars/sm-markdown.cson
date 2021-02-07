@@ -265,14 +265,18 @@ repository:
         }
       },
       {
-        match: '^((\\s?[^\\s]+){1,1}):(\\s|$)'
+        match: '\"(.*)\"'
         captures: {
-          1: name: 'mdkeyword.key'
+          1: name: 'squote'
         }
       },
       {
         name: 'mdkeyword.nickname'
         match: '@([\\w]+)'
+      },
+      {
+        name: 'mdkeyword.arrow'
+        match: '->'
       },
       {
         name: 'mdkeyword.url'
