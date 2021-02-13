@@ -138,6 +138,10 @@ repository:
               name: 'symbol'
           3:
               name: 'text'
+              patterns: [
+                { include: "#emphasis" }
+                { include: "#keywords" }
+              ]
         }
       }
     ]
