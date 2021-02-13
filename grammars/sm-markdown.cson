@@ -146,17 +146,6 @@ repository:
       }
     ]
 
-  section:
-    patterns: [
-      {
-        match: '(^[^:]+):$'
-        captures: {
-          1:
-              name: 'section'
-        }
-      }
-    ]
-
   # Plain text
   plaintext:
     patterns: [
