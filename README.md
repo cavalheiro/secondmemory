@@ -8,9 +8,11 @@ Second memory is a way to keep note cards and journals inside of Atom editor, wi
 
 | Keystroke         | Behaviour                                                          |
 |-------------------|--------------------------------------------------------------------|
-| ctrl-1            | Toggle Heading                                                     |
-| ctrl-2            | Toggle List                                                        |
-| ctrl-3            | Toggle Quote                                                       |
+| ctrl-1            | Heading 1                                                          |
+| ctrl-2            | Heading 2                                                          |
+| ctrl-3            | Heading 3                                                          |
+| ctrl-*            | Create List (if not exists)                                        |
+| alt-q             | Create Quote                                                       |
 
 #### Emphasis
 
@@ -36,7 +38,8 @@ When inside a `List`
 | tab               | Indent list item                                                   |
 | shift-tab         | Outdent list item                                                  |
 | enter             | Create new list item                                               |
-| ctrl-alt-s        | Star list item                                                     |
+| ctrl-S            | Star list item                                                     |
+| ctrl-T            | Create TODO item                                                     |
 | ctrl-alt-x        | Create / update Org checkbox                                       |
 
 ## Examples

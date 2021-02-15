@@ -30,17 +30,13 @@ atom-text-editor {
                lighten(@base-color, 20%),
                darken(@base-color, 20%));
     @h3-color: contrast(@syntax-background-color,
-               lighten(@base-color, 15%),
-               darken(@base-color, 15%));
-    @h4-color: contrast(@syntax-background-color,
                lighten(@base-color, 10%),
                darken(@base-color, 10%));
-    @h5-color: contrast(@syntax-background-color,
-               lighten(@base-color, 5%),
-               darken(@base-color, 5%));
-    @h6-color: @base-color;
+    @h4-color: @base-color;
+    @h5-color: @mild-color;
+    @h6-color: @mild-color;
 
-    @list-symbol-color: @text-color-error;
+    @list-symbol-color: @emphasis-color;
     @codeblock-color: spin(saturate(@syntax-text-color, 40%), 180);
     @link-color: @codeblock-color;
 
@@ -68,7 +64,7 @@ atom-text-editor {
       .syntax--h1 {
         .syntax--text {
           font-weight: bold;
-          font-size: 1.20em;
+          font-size: 1.30em;
           line-height:0.8em;
           color: @h1-color;
         }
@@ -76,7 +72,7 @@ atom-text-editor {
       .syntax--h2 {
         .syntax--text {
           font-weight: bold;
-          font-size: 1.15em;
+          font-size: 1.20em;
           line-height:0.8em;
           color: @h2-color;
         }
@@ -91,7 +87,7 @@ atom-text-editor {
       }
       .syntax--h4 {
         .syntax--text {
-          font-size: 1.05em;
+          // font-size: 1.05em;
           // line-height:0.8em;
           font-weight: bold;
           color: @h4-color;
@@ -117,6 +113,7 @@ atom-text-editor {
           margin-left: 10px;
           .syntax--symbol {
             color: @list-symbol-color;
+            font-weight: bold;
           }
           .syntax--text {
             margin-left: 5px;
@@ -127,7 +124,7 @@ atom-text-editor {
           margin-left: 10px;
           .syntax--symbol {
             color: @list-symbol-color;
-            // font-weight: bold;
+            font-weight: normal;
           }
           .syntax--text {
             margin-left: 5px;
@@ -147,6 +144,7 @@ atom-text-editor {
       .syntax--text {
         color: @subtle-color;
         font-style: italic;
+        font-size: 95%;
         // margin-left: 10px;
       }
      }

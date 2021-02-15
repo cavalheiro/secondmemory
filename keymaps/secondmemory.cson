@@ -1,12 +1,16 @@
 'atom-text-editor[data-grammar="source secondmemory"]':
 
-  'ctrl-1': 'sm:createHeading'
-  'ctrl-2': 'sm:createList'
-  'ctrl-3': 'sm:createQuote'
+  'ctrl-1': 'sm:createHeading1'
+  'ctrl-2': 'sm:createHeading2'
+  'ctrl-3': 'sm:createHeading3'
+
+  'ctrl-*': 'sm:createList'
+  'ctrl-\'': 'sm:createQuote'
 
   'tab': 'sm:indent',
   'shift-tab': 'sm:outdent'
   'enter': 'sm:newLine'
+  'shift-backspace': 'sm:deleteLine'
   'alt-up': 'sm:insertLineBefore'
   'alt-down': 'sm:insertLineAfter'
 
